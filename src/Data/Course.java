@@ -1,0 +1,59 @@
+package Data;
+
+import java.io.Serializable;
+
+/**
+ * @author Chuxing, Fang
+ * @version 1.0
+ * Data class of the course
+ */
+public class Course implements Serializable {
+    private String courseId;
+    private String title;
+    private String type;
+    // The file path of the video
+    private String video;
+    // The file path of the cover image
+    private String cover;
+
+    public String getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+}

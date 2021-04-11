@@ -99,8 +99,6 @@ public class LoginRegister extends Application {
         return new Scene(vbox, 400, 720);
     }
 
-
-
     public static void main(String[] args) {
         launch(args);
     }
