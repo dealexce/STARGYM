@@ -48,12 +48,14 @@ public class LoginPage extends ControlledPage{
 
         Button login_button = new Button("Login");
         login_button.setOnMouseClicked(event -> this.login(username_text.getText(),password_text.getText()));
-        Button goRegister_btn = new Button("Register for an account");
-        goRegister_btn.setOnMouseClicked(event -> stageController.switchStage(MainApp.loginPageID,MainApp.registerPageID));
         login_button.setPrefWidth(200);
         login_button.setMinHeight(50);
+        Button goRegister_btn = new Button("Register for an account");
+        goRegister_btn.setOnMouseClicked(event -> stageController.switchStage(MainApp.loginPageID,MainApp.registerPageID));
+        Button guestin_btn = new Button("Visit as a guest");
+        guestin_btn.setOnMouseClicked(event -> guestin());
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(welcome_lbl,usernameBox,passwordBox,login_button,goRegister_btn);
+        vbox.getChildren().addAll(welcome_lbl,usernameBox,passwordBox,login_button,goRegister_btn,guestin_btn);
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(20);
         Scene scene = new Scene(vbox, 400, 720);
@@ -73,6 +75,13 @@ public class LoginPage extends ControlledPage{
     private void login(String username, String password){
         stageController.unloadStage(MainApp.homePageID);
         HomePage homePage = new HomePage(stageController,username,password);
+        stageController.addStage(MainApp.homePageID,homePage.genStage());
+        stageController.switchStage(MainApp.loginPageID,MainApp.homePageID);
+    }
+
+    private void guestin(){
+        stageController.unloadStage(MainApp.homePageID);
+        HomePage homePage = new HomePage(stageController);
         stageController.addStage(MainApp.homePageID,homePage.genStage());
         stageController.switchStage(MainApp.loginPageID,MainApp.homePageID);
     }
