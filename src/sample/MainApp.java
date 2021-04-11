@@ -9,6 +9,7 @@ public class MainApp extends Application {
     public static final String registerPageID = "registerPage";
     @Override
     public void start(Stage primaryStage) throws Exception {
+        //Create a StageController and load all stages into it
         StageController stageController = new StageController();
         stageController.addStage("primaryStage",primaryStage);
         HomePage homePage = new HomePage(stageController);
@@ -16,7 +17,9 @@ public class MainApp extends Application {
         LoginPage loginPage = new LoginPage(stageController);
         stageController.addStage(loginPageID, loginPage.genLoginStage());
         RegisterPage registerPage = new RegisterPage(stageController);
-        stageController.addStage(registerPageID, registerPage.genRegisterScene());
+        stageController.addStage(registerPageID, registerPage.genRegisterStage());
+
+        //Show homepage first
         stageController.showStage(homePageID);
     }
 

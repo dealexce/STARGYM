@@ -18,6 +18,13 @@ public class HomePage extends ControlledPage {
     private String username, password;
     private boolean isLogin;
 
+
+    /**
+     * Construct a HomePage that is logged in, with user's information
+     * @param stageController the StageController controlling this Stage
+     * @param username the username of this logged in member
+     * @param password the password of this logged in member
+     */
     public HomePage(StageController stageController, String username, String password){
         super(stageController);
         this.username = username;
@@ -25,6 +32,10 @@ public class HomePage extends ControlledPage {
         this.isLogin = true;
     }
 
+    /**
+     * Construct a HomePage that has not logged in yet
+     * @param stageController the StageController controlling this Stage
+     */
     public HomePage(StageController stageController){
         super(stageController);
         this.isLogin = false;
@@ -50,6 +61,11 @@ public class HomePage extends ControlledPage {
 //    }
 
 
+
+    /**
+     * Generate the stage of home page
+     * @return a Stage of homepage
+     */
     public Stage genStage() {
         Stage s = new Stage();
         BorderPane borderPane = new BorderPane();
@@ -65,6 +81,10 @@ public class HomePage extends ControlledPage {
     }
 
 
+    /**
+     * Generate top menu bar when logged in as a member
+     * @return HBox of top menu bar of login type
+     */
     private HBox genTopMenuMember(){
         Label welcome_lbl = new Label("Welcome! "+this.username);
         welcome_lbl.setStyle("-fx-font-size: 18");
@@ -84,6 +104,11 @@ public class HomePage extends ControlledPage {
         return topBox;
     }
 
+
+    /**
+     * Generate the top menu bar when not logged in
+     * @return HBox of top menu bar of guest type
+     */
     private HBox genTopMenuGuest(){
         Label welcome_lbl = new Label("Welcome to London Fitness!");
         welcome_lbl.setStyle("-fx-font-size: 18");
@@ -103,6 +128,11 @@ public class HomePage extends ControlledPage {
     }
 
 
+
+    /**
+     * Generate contents in home page
+     * @return VBox of contents
+     */
     private VBox genContent(){
 
         VBox vbox = new VBox();
@@ -112,6 +142,11 @@ public class HomePage extends ControlledPage {
         return vbox;
     }
 
+
+    /**
+     * Generate elaborate courses area in page's content
+     * @return VBox of Courses
+     */
     private VBox genCoursesPane(){
         Label courses_lbl = new Label("ELABORATE COURSES");
         courses_lbl.setStyle("-fx-font-size: 28");
@@ -132,6 +167,11 @@ public class HomePage extends ControlledPage {
         return coursesBox;
     }
 
+
+    /**
+     * Generate celebrity trainers area in page's content
+     * @return VBox of trainers
+     */
     private VBox genTrainersPane(){
         Label courses_lbl = new Label("CELEBRITY TRAINERS");
         courses_lbl.setStyle("-fx-font-size: 28");
@@ -151,6 +191,10 @@ public class HomePage extends ControlledPage {
         return trainerBox;
     }
 
+
+    /**
+     * Logout and jump to the login page, meanwhile unload this logged homepage
+     */
     private void logout(){
         stageController.unloadStage(MainApp.homePageID);
         HomePage homePage = new HomePage(stageController);

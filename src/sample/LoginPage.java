@@ -16,6 +16,13 @@ public class LoginPage extends ControlledPage{
     }
 
 
+    /**
+    * @Description: Generate the stage of login page
+    * @Param: []
+    * @return: javafx.stage.Stage
+    * @Author: Haopu Chen
+    * @Date: 2021/4/11
+    */
     public Stage genLoginStage(){
         Label welcome_lbl = new Label("Welcome to\nSTAYGYM");
         welcome_lbl.setAlignment(Pos.CENTER);
@@ -56,6 +63,13 @@ public class LoginPage extends ControlledPage{
         return stage;
     }
 
+    /**
+    * @Description: Login with input username and password, unload guest homepage, load member homepage and jump to it
+    * @Param: [username, password]
+    * @return: void
+    * @Author: Haopu Chen
+    * @Date: 2021/4/11
+    */
     private void login(String username, String password){
         stageController.unloadStage(MainApp.homePageID);
         HomePage homePage = new HomePage(stageController,username,password);

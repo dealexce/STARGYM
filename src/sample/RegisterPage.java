@@ -14,7 +14,14 @@ public class RegisterPage extends ControlledPage{
     public RegisterPage(StageController stageController) {
         super(stageController);
     }
-    public Stage genRegisterScene() {
+    /**
+    * @Description: Generate register page
+    * @Param: []
+    * @return: javafx.stage.Stage
+    * @Author: Haopu Chen
+    * @Date: 2021/4/11
+    */
+    public Stage genRegisterStage() {
         Label welcome_lbl = new Label("Register");
         welcome_lbl.setStyle("-fx-font-size: 40");
 
