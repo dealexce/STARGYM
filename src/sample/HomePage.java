@@ -14,37 +14,49 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class Main extends Application {
-    Stage stage = new Stage();
+public class HomePage extends ControlledPage {
     private String username, password;
+    private boolean isLogin;
 
-    public Main(String username, String password){
-        super();
+    public HomePage(StageController stageController, String username, String password){
+        super(stageController);
         this.username = username;
         this.password = password;
+        this.isLogin = true;
+    }
+
+    public HomePage(StageController stageController){
+        super(stageController);
+        this.isLogin = false;
     }
 
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+//    public static void main(String[] args) {
+//        launch(args);
+//    }
 
-    @Override
-    public void start(Stage primaryStage) {
-        BorderPane borderPane = new BorderPane();
-        borderPane.setTop(genTopMenu());
-        borderPane.setCenter(genContent());
-        Scene scene = new Scene(borderPane,1280,750);
-        stage.setTitle("Home");
-        stage.setScene(scene);
-        stage.show();
-    }
+//    @Override
+//    public void start(Stage primaryStage) {
+//        BorderPane borderPane = new BorderPane();
+//        if(this.isLogin)
+//            borderPane.setTop(genTopMenuMember());
+//        else
+//            borderPane.setTop(genTopMenuGuest());
+//        borderPane.setCenter(genContent());
+//        Scene scene = new Scene(borderPane,1280,750);
+//        primaryStage.setTitle("Home");
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
+//    }
 
 
     public Stage genStage() {
         Stage s = new Stage();
         BorderPane borderPane = new BorderPane();
-        borderPane.setTop(genTopMenu());
+        if(this.isLogin)
+            borderPane.setTop(genTopMenuMember());
+        else
+            borderPane.setTop(genTopMenuGuest());
         borderPane.setCenter(genContent());
         Scene scene = new Scene(borderPane,1280,750);
         s.setTitle("Home");
@@ -53,7 +65,7 @@ public class Main extends Application {
     }
 
 
-    private HBox genTopMenu(){
+    private HBox genTopMenuMember(){
         Label welcome_lbl = new Label("Welcome! "+this.username);
         welcome_lbl.setStyle("-fx-font-size: 18");
         welcome_lbl.setTextFill(Color.WHITE);
@@ -61,13 +73,35 @@ public class Main extends Application {
         booking_btn.setPrefSize(100,20);
         Button myinfo_btn = new Button("My Info");
         myinfo_btn.setPrefSize(100,20);
+        Button logout_btn = new Button("Log out");
+        logout_btn.setOnMouseClicked(event -> this.logout());
+        myinfo_btn.setPrefSize(100,20);
         HBox topBox = new HBox();
-        topBox.getChildren().addAll(welcome_lbl,booking_btn,myinfo_btn);
+        topBox.getChildren().addAll(welcome_lbl,booking_btn,myinfo_btn,logout_btn);
         topBox.setSpacing(10);
         topBox.setPadding(new Insets(15));
         topBox.setStyle("-fx-background-color: #336699;");
         return topBox;
     }
+
+    private HBox genTopMenuGuest(){
+        Label welcome_lbl = new Label("Welcome to London Fitness!");
+        welcome_lbl.setStyle("-fx-font-size: 18");
+        welcome_lbl.setTextFill(Color.WHITE);
+        Button login_btn = new Button("Login");
+        login_btn.setPrefSize(100,20);
+        login_btn.setOnMouseClicked(event -> stageController.switchStage(MainApp.homePageID,MainApp.loginPageID));
+        Button register_btn = new Button("Register");
+        register_btn.setPrefSize(100,20);
+        register_btn.setOnMouseClicked(event -> stageController.switchStage(MainApp.homePageID,MainApp.registerPageID));
+        HBox topBox = new HBox();
+        topBox.getChildren().addAll(welcome_lbl,login_btn,register_btn);
+        topBox.setSpacing(10);
+        topBox.setPadding(new Insets(15));
+        topBox.setStyle("-fx-background-color: #336699;");
+        return topBox;
+    }
+
 
     private VBox genContent(){
 
@@ -116,4 +150,12 @@ public class Main extends Application {
         trainerBox.getChildren().addAll(courses_lbl,trainerPane);
         return trainerBox;
     }
+
+    private void logout(){
+        stageController.unloadStage(MainApp.homePageID);
+        HomePage homePage = new HomePage(stageController);
+        stageController.addStage(MainApp.homePageID,homePage.genStage());
+        stageController.switchStage(MainApp.homePageID,MainApp.loginPageID);
+    }
+
 }
