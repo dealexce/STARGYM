@@ -1,0 +1,37 @@
+import Data.Trainer;
+import Repository.TrainerRepository;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+/**
+ * @author Chuxing, Fang
+ * @date
+ */
+class TrainerRepositoryTest {
+    private static Trainer testTrainer;
+    private static TrainerRepository repository;
+
+    @BeforeAll
+    static void initial() {
+        testTrainer = new Trainer();
+        testTrainer.setUserId("Tr10001");
+        testTrainer.setUserName("Fang");
+        testTrainer.setPassWord("fc2123");
+        repository = new TrainerRepository();
+    }
+
+    @Test
+    void add() {
+        assertTrue(repository.add(testTrainer));
+    }
+
+    @Test
+    void getById() {
+        Trainer resultTrainer = repository.getById("Tr10001");
+        assertEquals(resultTrainer.getPassWord(), "fc2123");
+        assertEquals(resultTrainer.getUserName(), "Fang");
+    }
+}

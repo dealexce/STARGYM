@@ -18,6 +18,8 @@ public class Trainee extends User implements Serializable {
         super(userId, userName, passWord, telephone, sex);
     }
 
+    public Trainee(){}
+
     public String getUserType() {
         return userType;
     }
