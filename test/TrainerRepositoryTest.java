@@ -3,6 +3,8 @@ import Repository.TrainerRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import javax.xml.ws.ServiceMode;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -33,5 +35,15 @@ class TrainerRepositoryTest {
         Trainer resultTrainer = repository.getById("Tr10001");
         assertEquals(resultTrainer.getPassWord(), "fc2123");
         assertEquals(resultTrainer.getUserName(), "Fang");
+    }
+
+    @Test
+    void login() {
+        assertTrue(repository.login("Tr10001","fc2123"));
+    }
+
+    @Test
+    void register(){
+        assertTrue(repository.register("Peter","12345678"));
     }
 }

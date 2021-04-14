@@ -33,4 +33,14 @@ class TraineeRepositoryTest {
         assertEquals(resultTrainee.getSex(), "Male");
         assertEquals(resultTrainee.getTelephone(),"17363348888");
     }
+
+    @Test
+    void login() {
+        assertTrue(repository.login("Te10001","star123"));
+    }
+
+    @Test
+    void register(){
+        assertTrue(repository.register("David","12345678"));
+    }
 }
