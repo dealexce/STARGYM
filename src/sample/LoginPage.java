@@ -28,6 +28,7 @@ public class LoginPage extends ControlledPage{
         welcome_lbl.setAlignment(Pos.CENTER);
         welcome_lbl.setStyle("-fx-text-alignment: center;-fx-font-size: 28");
 
+
         Label username_lbl = new Label("username:");
         TextField username_text = new TextField();
         username_text.setMaxWidth(200);

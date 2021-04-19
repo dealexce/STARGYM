@@ -8,7 +8,7 @@ import java.io.*;
  * Util class used for data processing
  */
 public class DataRepository {
-    private String filePath;
+    private final String filePath;
 
     public DataRepository(String filePath) {
         // This path contains the project root path
@@ -17,10 +17,6 @@ public class DataRepository {
 
     public String getFilePath() {
         return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
     }
 
     /**
@@ -50,7 +46,7 @@ public class DataRepository {
      */
     public Object getById(String id){
 
-        Object ret = null;
+        Object ret;
         try
         {
             String fileName = id + ".ser";
@@ -71,5 +67,21 @@ public class DataRepository {
             ce.printStackTrace();
             return null;
         }
+    }
+
+    /**
+     * Get next id according to existing ids
+     * @return The next id
+     */
+    public String getNextId(){
+        File file  = new File(this.getFilePath());
+        File[] array = file.listFiles();
+        String lastFileName = array[array.length-1].getName();
+        String[] temp = lastFileName.split("\\.");
+        StringBuilder sb = new StringBuilder();
+        int number = Integer.parseInt(temp[0].substring(2)) + 1;
+        sb.append(temp[0].substring(0,2));
+        sb.append(number);
+        return sb.toString();
     }
 }
