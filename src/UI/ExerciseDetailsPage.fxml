@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <content>
+        <VBox alignment="TOP_CENTER">
+            <children>
+                <VBox prefWidth="1280.0" spacing="20.0" style="-fx-background-color: skyblue;">
+                    <children>
+                        <Button mnemonicParsing="false" text="&lt;HOME" />
+                        <GridPane maxHeight="140.0" minHeight="140.0" prefHeight="140.0" VBox.vgrow="NEVER">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="588.0000076293945" minWidth="10.0" prefWidth="588.0000076293945" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <VBox prefHeight="54.0" prefWidth="589.0" spacing="10.0">
+                                    <children>
+                                        <HBox alignment="BASELINE_LEFT" prefHeight="138.0" prefWidth="589.0" spacing="10.0">
+                                 <children>
+                                                <Label alignment="CENTER" prefHeight="95.0" prefWidth="417.0" text="Exercises Name">
+                                                    <font>
+                                                        <Font size="36.0" />
+                                                    </font>
+                                                </Label>
+                                 </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </GridPane>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets />
+                    </BorderPane.margin>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+                <VBox alignment="TOP_CENTER" prefHeight="428.0" prefWidth="1280.0" spacing="10.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="34.0" prefWidth="1200.0" spacing="10.0">
+                            <children>
+                                <Label prefHeight="27.0" prefWidth="93.0" text="Trainers">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                     <padding>
+                        <Insets bottom="10.0" left="45.0" right="40.0" top="10.0" />
+                     </padding>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="60.0">
+                            <padding>
+                                <Insets left="40.0" right="40.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="10.0" />
+                            </VBox.margin>
+                            <children>
+                                <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <ImageView fitHeight="94.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../Resources/Trainers/T1.png" />
+                                            </image>
+                                        </ImageView>
+                                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
+                                            <children>
+                                                <Label text="Steve Jobs">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <Button mnemonicParsing="false" text="chat" />
+                                            </children>
+                                            <GridPane.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </VBox>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </GridPane>
+                                <GridPane layoutX="50.0" layoutY="10.0" maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../Resources/Trainers/T1.png" />
+                                            </image>
+                                        </ImageView>
+                                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
+                                            <children>
+                                                <Label text="Steve Jobs">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <Button mnemonicParsing="false" text="chat" />
+                                            </children>
+                                            <GridPane.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                            </GridPane.margin>
+                                        </VBox>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </GridPane>
+                            </children>
+                        </HBox>
+                  <HBox prefHeight="38.0" prefWidth="1200.0">
+                     <children>
+                        <Label prefHeight="48.0" prefWidth="154.0" text="       Members">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="110.0" prefHeight="100.0" prefWidth="200.0" spacing="60.0">
+                     <children>
+                        <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <ImageView fitHeight="94.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Trainers/T1.png" />
+                                 </image></ImageView>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="MemeberA">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" text="chat" />
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </GridPane.margin></VBox>
+                           </children>
+                        </GridPane>
+                        <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Resources/Trainers/T1.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </GridPane.margin>
+                                 <children>
+                                    <Label text="MemberB">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" text="chat" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets left="40.0" right="40.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>
