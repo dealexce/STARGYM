@@ -1,4 +1,4 @@
-package sample;
+package UI;
 
 public abstract class ControlledPage {
     protected StageController stageController;

@@ -13,7 +13,7 @@ public class CourseRepository extends DataRepository {
     }
 
     /**
-     * Add a course as a serial file
+     * Add or update a course as a serial file
      *
      * @param course Trainee object
      * @return True if success and false if fail

@@ -1,10 +1,8 @@
-package sample;
+package UI;
 
-import javafx.application.Application;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class StageController {

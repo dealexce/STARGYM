@@ -1,4 +1,4 @@
-package sample;
+package UI;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sun.applet.Main;
 
 public class RegisterPage extends ControlledPage{
     public RegisterPage(StageController stageController) {
