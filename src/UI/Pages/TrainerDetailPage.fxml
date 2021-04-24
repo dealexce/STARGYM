@@ -14,7 +14,7 @@
                <children>
                   <ImageView fitHeight="150.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Resources/Trainers/T1.png" />
+                        <Image url="@../../res/Trainers/T1.png" />
                      </image>
                   </ImageView>
                   <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="305.0" spacing="25.0">
@@ -84,6 +84,9 @@
                      </children>
                   </VBox>
                </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>

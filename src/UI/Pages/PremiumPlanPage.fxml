@@ -6,11 +6,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="UI.PremiumPlanController">
     <top>
         <VBox prefHeight="66.0" prefWidth="600.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
             <children>
-                <Button mnemonicParsing="false" text="&lt;HOME" />
+                <Button mnemonicParsing="false" text="&lt;HOME" onMouseClicked="#goHome"/>
                 <GridPane>
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -65,7 +66,7 @@
                                     <children>
                                         <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../Resources/Plan/P1.png" />
+                                                <Image url="@../../res/Plan/P1.png" />
                                             </image>
                                         </ImageView>
                                         <Label text="VIP 1">
@@ -101,7 +102,7 @@
                                     <children>
                                         <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../Resources/Plan/P1.png" />
+                                                <Image url="@../../res/Plan/P1.png" />
                                             </image>
                                         </ImageView>
                                         <Label text="VIP 1">
@@ -120,7 +121,7 @@
                                     <children>
                                         <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../Resources/Plan/P1.png" />
+                                                <Image url="@../../res/Plan/P1.png" />
                                             </image>
                                         </ImageView>
                                         <Label text="VIP 2">
@@ -139,7 +140,7 @@
                                     <children>
                                         <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../Resources/Plan/P1.png" />
+                                                <Image url="@../../res/Plan/P1.png" />
                                             </image>
                                         </ImageView>
                                         <Label text="VIP 3">
@@ -158,7 +159,7 @@
                                     <children>
                                         <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../Resources/Plan/P1.png" />
+                                                <Image url="@../../res/Plan/P1.png" />
                                             </image>
                                         </ImageView>
                                         <Label text="VIP 4">
@@ -177,7 +178,7 @@
                                     <children>
                                         <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../Resources/Plan/P1.png" />
+                                                <Image url="@../../res/Plan/P1.png" />
                                             </image>
                                         </ImageView>
                                         <Label text="VIP 5">

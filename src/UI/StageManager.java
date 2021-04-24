@@ -1,22 +1,53 @@
 package UI;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StageController {
+public class StageManager {
     private HashMap<String, Stage> stages = new HashMap<String, Stage>();
-    public StageController(){
+    public StageManager(){
     }
 
     /**
-     * Add a new stage into this StageController
+     * Add a new stage into this StageManager
      * @param name name of this new Stage
      * @param stage the new Stage
      */
     public void addStage(String name, Stage stage){
         stages.put(name, stage);
+    }
+
+    public void openStage(String resource){
+        Stage tempStage = stages.get(resource);
+        if(tempStage!=null){
+            tempStage.show();
+            tempStage.toFront();
+        }else{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(resource));
+            Parent p = null;
+            try {
+                p = loader.load();
+                ManagedPage managedPage = (ManagedPage) loader.getController();
+                managedPage.setStageManager(this);
+
+                Scene scene = new Scene(p);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                this.addStage(resource,stage);
+                this.showStage(resource);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     /**
@@ -37,27 +68,27 @@ public class StageController {
     }
 
     /**
-     * Close the old stage, and show the new stage
+     * Hide the old stage, and show the new stage
      * @param oldPage name of the old Stage
      * @param newPage name of the new Stage
      */
     public void switchStage(String oldPage,String newPage){
-        closeStage(oldPage);
+        hideStage(oldPage);
         showStage(newPage);
     }
 
     /**
-     * Close the stage with respond to given name
+     * Hide the stage with respond to given name
      * @param name name of the stage to close
      */
-    public void closeStage(String name){
+    public void hideStage(String name){
         stages.get(name).close();
     }
 
     /**
-     * Close all stages in the hashmap
+     * Hide all stages in the hashmap
      */
-    public void closeAllStage(){
+    public void hideAllStage(){
         for(Map.Entry<String,Stage> entry:stages.entrySet()){
             entry.getValue().close();
         }
@@ -68,7 +99,7 @@ public class StageController {
      * @param name name of the stage to unload
      * @return true if successfully removed, false if no such a stage to remove
      */
-    public boolean unloadStage(String name){
+    public boolean closeStage(String name){
         if(stages.get(name)!=null){
             stages.get(name).close();
             stages.remove(name);
@@ -78,6 +109,12 @@ public class StageController {
             System.out.println("Removing non-existing stage: "+name);
             return false;
         }
+    }
+
+
+    public void stageRedirect(String oldStageName, String newStageName){
+        closeStage(oldStageName);
+        openStage(newStageName);
     }
 
 
