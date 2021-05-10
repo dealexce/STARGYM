@@ -44,6 +44,7 @@ class TrainerRepositoryTest {
 
     @Test
     void register(){
-        assertTrue(repository.register("Peter","12345678"));
+        assertEquals(repository.register("Peter","12345678").getUserName(), "Peter");
     }
+
 }

@@ -59,12 +59,13 @@ public class TraineeRepository extends DataRepository {
      * @param password The user's password
      * @return true if success and false if fail
      */
-    public boolean register(String username, String password) {
+    public Trainee register(String username, String password) {
         Trainee trainee = new Trainee();
         trainee.setUserId(getNextId());
         trainee.setUserName(username);
         trainee.setPassWord(password);
-        return add(trainee);
+        add(trainee);
+        return trainee;
     }
 
     /**

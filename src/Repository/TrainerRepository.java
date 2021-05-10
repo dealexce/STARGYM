@@ -4,6 +4,11 @@ import Data.Course;
 import Data.Trainee;
 import Data.Trainer;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -59,12 +64,13 @@ public class TrainerRepository extends DataRepository {
      * @param password The user's password
      * @return true if success and false if fail
      */
-    public boolean register(String username, String password) {
+    public Trainer register(String username, String password) {
         Trainer trainer = new Trainer();
         trainer.setUserId(getNextId());
         trainer.setUserName(username);
         trainer.setPassWord(password);
-        return add(trainer);
+        add(trainer);
+        return trainer;
     }
 
     /**
@@ -110,19 +116,20 @@ public class TrainerRepository extends DataRepository {
     }
 
     /**
-     * Add a course to a trainer's own list according to the course id
+     * Trainer user create a course
      *
      * @param trainer  the trainer object
-     * @param courseID the id of the course
+     * @param course the course object
      * @return true if success and false if fail
      */
-    public boolean addCourse(Trainer trainer, String courseID) {
+    public boolean createCourse(Trainer trainer, Course course) {
         List<Course> temp = trainer.getMyCourses();
         CourseRepository courseRepository = new CourseRepository();
-        Course course = courseRepository.getById(courseID);
         if (course == null) {
             return false;
         } else {
+            course.setTrainerId(trainer.getUserId());
+            courseRepository.add(course);
             temp.add(course);
             trainer.setMyCourses(temp);
             return add(trainer);
@@ -149,5 +156,31 @@ public class TrainerRepository extends DataRepository {
         }
         // if not find the id then return false
         return false;
+    }
+
+    /**
+     * Get all the trainer information
+     * @return All the existed trainers
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    public List<Trainer> getALL(){
+        String path = this.getFilePath();
+        List<String> files = new ArrayList<String>();
+        List<Trainer> trainers = new ArrayList<>();
+        File file = new File(path);
+        File[] tempList = file.listFiles();
+        try{
+            for (int i = 0; i < (tempList != null ? tempList.length : 0); i++) {
+                if (tempList[i].isFile()) {
+                    FileInputStream inputStream = new FileInputStream(tempList[i]);
+                    ObjectInputStream out = new ObjectInputStream(inputStream);
+                    trainers.add((Trainer) out.readObject());
+                }
+            }
+        }catch (IOException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return trainers;
     }
 }
