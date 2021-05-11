@@ -1,5 +1,6 @@
 package UI;
 
+import Service.DataService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,9 +13,15 @@ import java.util.Map;
 
 public class StageManager {
     private HashMap<String, Stage> stages = new HashMap<String, Stage>();
+    private DataService dataService;
+
     public StageManager(){
+        dataService = new DataService();
     }
 
+    public DataService getDataService() {
+        return dataService;
+    }
     /**
      * Add a new stage into this StageManager
      * @param name name of this new Stage
@@ -34,9 +41,11 @@ public class StageManager {
             loader.setLocation(getClass().getResource(resource));
             Parent p = null;
             try {
-                p = loader.load();
+                p = loader. load();
                 ManagedPage managedPage = (ManagedPage) loader.getController();
                 managedPage.setStageManager(this);
+                managedPage.init();
+
 
                 Scene scene = new Scene(p);
                 Stage stage = new Stage();

@@ -18,6 +18,11 @@ public class DataService {
     private CourseRepository courseRepository;
     private TrainerRepository trainerRepository;
     private TraineeRepository traineeRepository;
+
+    public boolean isLogin() {
+        return isLogin;
+    }
+
     private boolean isLogin = false;
 
     public DataService(Trainee trainee) {
