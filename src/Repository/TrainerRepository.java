@@ -1,6 +1,7 @@
 package Repository;
 
 import Data.Course;
+import Data.Exercise;
 import Data.Trainee;
 import Data.Trainer;
 
@@ -182,5 +183,43 @@ public class TrainerRepository extends DataRepository {
             e.printStackTrace();
         }
         return trainers;
+    }
+
+    /**
+     * Add an exercise to a trainer's exercises
+     * @param trainer the trainer object
+     * @param exercise the exercise object
+     * @return
+     */
+    public boolean addMyExercises(Trainer trainer, Exercise exercise){
+        List<Exercise> temp = trainer.getMyExercises();
+        if (exercise == null) {
+            return false;
+        } else {
+            temp.add(exercise);
+            trainer.setMyExercises(temp);
+            return add(trainer);
+        }
+    }
+
+    /**
+     * delete an exercise from a trainer's exercises
+     * @param trainer the trainer object
+     * @param exerciseId the exercise id
+     * @return
+     */
+    public boolean deleteExercise(Trainer trainer, String exerciseId){
+        List<Exercise> temp = trainer.getMyExercises();
+        Iterator<Exercise> iter = temp.iterator();
+        while (iter.hasNext()) {
+            Exercise elem = iter.next();
+            if (elem.getExerciseId().equals(exerciseId)) {
+                temp.remove(elem);
+                trainer.setMyExercises(temp);
+                return add(trainer);
+            }
+        }
+        // if not find the id then return false
+        return false;
     }
 }

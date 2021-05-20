@@ -1,6 +1,7 @@
 package Repository;
 
 import Data.Course;
+import Data.Exercise;
 import Data.Trainee;
 import Data.Trainer;
 
@@ -150,5 +151,72 @@ public class TraineeRepository extends DataRepository {
         }
         // if not find the id then return false
         return false;
+    }
+
+    /**
+     * create a new exercise, need to choose date, time, description and trainer
+     * @param trainee the trainee object
+     * @param exercise the exercise object
+     * @return true if success and false if fail
+     */
+    public boolean createExercise(Trainee trainee, Exercise exercise){
+        // initialize the exercise object
+        exercise.setTraineeId(trainee.getUserId());
+        ExerciseRepository exerciseRepository = new ExerciseRepository();
+        exercise.setExerciseId(exerciseRepository.getNextId());
+        exerciseRepository.add(exercise);
+        // add the exercise to the corresponding trainer
+        TrainerRepository trainerRepository = new TrainerRepository();
+        Trainer trainer = trainerRepository.getById(exercise.getTrainerId());
+        trainerRepository.addMyExercises(trainer, exercise);
+        if(!trainerRepository.add(trainer)){
+            return false;
+        }
+        // add the exercise to the corresponding trainee
+        return add(trainee);
+    }
+
+    /**
+     * cancel a certain exercise
+     * @param trainee the trainee object
+     * @param exerciseId the id of the exercise
+     * @return true if success and false if fail
+     */
+    public boolean cancelExercise(Trainee trainee, String exerciseId){
+        ExerciseRepository exerciseRepository = new ExerciseRepository();
+        List<Exercise> exercises = exerciseRepository.getALL();
+        Iterator<Exercise> iter = exercises.iterator();
+        while (iter.hasNext()) {
+            Exercise elem = iter.next();
+            if (elem.getExerciseId().equals(exerciseId)) {
+                exercises.remove(elem);
+                trainee.setMyExercises(exercises);
+                return add(trainee);
+            }
+        }
+        // if not find the id then return false
+        return false;
+    }
+
+    /**
+     * register a trainee as a member
+     * @param trainee the trainee member
+     * @param category 1 for normal, 2 for member, 3 for VIP
+     * @return true if success and false if fail
+     */
+    public boolean registerMembership(Trainee trainee, int category){
+        switch (category){
+            case 1:
+                trainee.setUserType("Normal");
+                return add(trainee);
+            case 2:
+                trainee.setUserType("Member");
+                return add(trainee);
+            case 3:
+                trainee.setUserType("VIPMember");
+                return add(trainee);
+            default:
+                return false;
+        }
     }
 }
