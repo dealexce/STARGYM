@@ -32,12 +32,12 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <Label text="username">
+                  <Label text="ID">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="username" />
+                  <TextField fx:id="userId" />
                </children>
             </VBox>
             <VBox layoutX="50.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
@@ -50,6 +50,15 @@
                   <PasswordField fx:id="password" />
                </children>
             </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+               <children>
+                  <RadioButton fx:id="member" mnemonicParsing="false" selected="true" text="Member">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="role" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Trainer" toggleGroup="$role" />
+               </children>
+            </HBox>
          </children>
       </VBox>
       <VBox alignment="CENTER" spacing="15.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">

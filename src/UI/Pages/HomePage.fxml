@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -45,153 +44,7 @@
                         <Button mnemonicParsing="false" onAction="#goAllCourses" text="view all" />
                      </children>
                   </HBox>
-                  <FlowPane hgap="80.0" vgap="50.0">
-                     <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
-                     </VBox.margin>
-                     <children>
-                        <VBox minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox layoutX="10.0" layoutY="10.0" minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox layoutX="240.0" layoutY="10.0" minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox layoutX="471.0" layoutY="10.0" minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox layoutX="701.0" layoutY="10.0" minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox layoutX="932.0" layoutY="10.0" minHeight="130.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Courses/C1.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="Kongfu Pro">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </FlowPane>
+                  <FlowPane fx:id="coursePane" hgap="80.0" vgap="50.0" />
                   <HBox prefHeight="26.0" prefWidth="1200.0" spacing="10.0">
                      <children>
                         <Label text="CELEBRITY TRAINERS">
@@ -202,221 +55,46 @@
                         <Button mnemonicParsing="false" onAction="#goAllTrainers" text="view all" />
                      </children>
                   </HBox>
-                  <FlowPane hgap="90.0" vgap="50.0">
+                  <FlowPane hgap="90.0" vgap="50.0" fx:id="trainerPane">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                      <children>
-                        <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Trainers/T1.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
-                                 <children>
-                                    <Label text="Steve Jobs">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Button mnemonicParsing="false" text="chat" />
-                                 </children>
-                                 <GridPane.margin>
-                                    <Insets left="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </GridPane>
-                        <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Trainers/T1.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
-                                 <children>
-                                    <Label text="Steve Jobs">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Button mnemonicParsing="false" text="chat" />
-                                 </children>
-                                 <GridPane.margin>
-                                    <Insets left="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </GridPane>
-                        <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Trainers/T1.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
-                                 <children>
-                                    <Label text="Steve Jobs">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Button mnemonicParsing="false" text="chat" />
-                                 </children>
-                                 <GridPane.margin>
-                                    <Insets left="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </GridPane>
-                        <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Trainers/T1.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
-                                 <children>
-                                    <Label text="Steve Jobs">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Button mnemonicParsing="false" text="chat" />
-                                 </children>
-                                 <GridPane.margin>
-                                    <Insets left="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </GridPane>
-                        <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Trainers/T1.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
-                                 <children>
-                                    <Label text="Steve Jobs">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Button mnemonicParsing="false" text="chat" />
-                                 </children>
-                                 <GridPane.margin>
-                                    <Insets left="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </GridPane>
-                        <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="/res/Trainers/T1.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">
-                                 <children>
-                                    <Label text="Steve Jobs">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Button mnemonicParsing="false" text="chat" />
-                                 </children>
-                                 <GridPane.margin>
-                                    <Insets left="10.0" top="10.0" />
-                                 </GridPane.margin>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </GridPane>
+<!--                        <GridPane maxHeight="110.0" minHeight="110.0" prefHeight="110.0" prefWidth="300.0" style="-fx-border-color: black;">-->
+<!--                          <columnConstraints>-->
+<!--                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />-->
+<!--                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />-->
+<!--                          </columnConstraints>-->
+<!--                          <rowConstraints>-->
+<!--                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />-->
+<!--                          </rowConstraints>-->
+<!--                           <children>-->
+<!--                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                                 <image>-->
+<!--                                    <Image url="/res/Trainer/T1.png" />-->
+<!--                                 </image>-->
+<!--                              </ImageView>-->
+<!--                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1">-->
+<!--                                 <children>-->
+<!--                                    <Label text="Steve Jobs">-->
+<!--                                       <font>-->
+<!--                                          <Font size="18.0" />-->
+<!--                                       </font>-->
+<!--                                       <VBox.margin>-->
+<!--                                          <Insets />-->
+<!--                                       </VBox.margin>-->
+<!--                                    </Label>-->
+<!--                                    <Button mnemonicParsing="false" text="chat" />-->
+<!--                                 </children>-->
+<!--                                 <GridPane.margin>-->
+<!--                                    <Insets left="10.0" top="10.0" />-->
+<!--                                 </GridPane.margin>-->
+<!--                              </VBox>-->
+<!--                           </children>-->
+<!--                           <padding>-->
+<!--                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />-->
+<!--                           </padding>-->
+<!--                        </GridPane>-->
                      </children>
                   </FlowPane>
                </children>

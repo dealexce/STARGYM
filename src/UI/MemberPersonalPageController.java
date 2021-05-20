@@ -1,6 +1,7 @@
 package UI;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
@@ -16,7 +17,14 @@ public class MemberPersonalPageController extends ManagedPage {
     }
 
     @FXML
+        private Label name;
+    @FXML
     public void viewPremium(MouseEvent mouseEvent) {
         this.stageManager.openStage(Path.PREMIUM);
+    }
+
+    @Override
+    public void init() {
+        name.setText(this.stageManager.getDataService().getTrainee().getUserName());
     }
 }

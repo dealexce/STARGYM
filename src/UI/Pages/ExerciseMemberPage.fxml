@@ -26,7 +26,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../res/Trainers/T1.png" />
+                              <Image url="@../../../res/Trainer/T1.png" />
                            </image></ImageView>
                         <VBox prefHeight="100.0" prefWidth="215.0" spacing="20.0">
                            <children>
@@ -54,7 +54,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../res/Trainers/T1.png" />
+                              <Image url="@../../../res/Trainer/T1.png" />
                            </image>
                         </ImageView>
                         <VBox prefHeight="100.0" prefWidth="215.0" spacing="20.0">
