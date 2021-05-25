@@ -10,4 +10,5 @@ public class Path {
     public static String TRAINER = "/Trainer";
     public static String TRAINEE = "/Trainee";
     public static String COURSE = "/Course";
+    public static String EXERCISE = "/Exercise";
 }

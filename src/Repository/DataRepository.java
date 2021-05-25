@@ -56,14 +56,13 @@ public class DataRepository {
             in.close();
             fileIn.close();
             return ret;
-        }catch(
-                IOException i)
+        }catch(IOException i)
         {
             i.printStackTrace();
             return null;
         }catch(ClassNotFoundException ce)
         {
-            System.out.println("Employee class not found");
+            System.out.println("Class not found");
             ce.printStackTrace();
             return null;
         }

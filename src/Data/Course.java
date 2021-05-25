@@ -9,6 +9,7 @@ import java.io.Serializable;
  */
 public class Course implements Serializable {
     private String courseId;
+    private String trainerId;
     private String title;
     private String type;
     // The file path of the video
@@ -54,6 +55,14 @@ public class Course implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getTrainerId() {
+        return trainerId;
+    }
+
+    public void setTrainerId(String trainerId) {
+        this.trainerId = trainerId;
     }
 
 }
