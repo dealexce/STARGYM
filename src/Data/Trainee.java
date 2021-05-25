@@ -9,23 +9,13 @@ import java.util.List;
  * Data class of trainee users
  */
 public class Trainee extends User implements Serializable {
-    // Type of members of the user (Normal, Member and VIPMember)
+    // Type of members of the user
     private String userType;
     private List<Course> favoriteCourses;
     private List<Trainer> favoriteTrainers;
 
-    public List<Exercise> getMyExercises() {
-        return myExercises;
-    }
-
-    public void setMyExercises(List<Exercise> myExercises) {
-        this.myExercises = myExercises;
-    }
-
-    private List<Exercise> myExercises;
-
-    public Trainee(String userId, String userName, String passWord, String telephone, String sex, int height, int weight) {
-        super(userId, userName, passWord, telephone, sex, height, weight);
+    public Trainee(String userId, String userName, String passWord, String telephone, String sex) {
+        super(userId, userName, passWord, telephone, sex);
     }
 
     public Trainee(){}

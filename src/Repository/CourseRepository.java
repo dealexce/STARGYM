@@ -2,9 +2,6 @@ package Repository;
 
 import Data.Course;
 
-import java.io.*;
-import java.util.*;
-
 /**
  * @author Chuxing, Fang
  * @version 1.0
@@ -34,31 +31,5 @@ public class CourseRepository extends DataRepository {
      */
     public Course getById(String id) {
         return (Course) super.getById(id);
-    }
-
-    /**
-     * Get all the course information
-     * @return All the existed courses
-     * @throws IOException
-     * @throws ClassNotFoundException
-     */
-    public List<Course> getALL(){
-        String path = this.getFilePath();
-        List<String> files = new ArrayList<String>();
-        List<Course> courses = new ArrayList<>();
-        File file = new File(path);
-        File[] tempList = file.listFiles();
-        try{
-            for (int i = 0; i < (tempList != null ? tempList.length : 0); i++) {
-                if (tempList[i].isFile()) {
-                    FileInputStream inputStream = new FileInputStream(tempList[i]);
-                    ObjectInputStream out = new ObjectInputStream(inputStream);
-                    courses.add((Course)out.readObject());
-                }
-            }
-        }catch (IOException | ClassNotFoundException e){
-            e.printStackTrace();
-        }
-        return courses;
     }
 }

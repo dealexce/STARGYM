@@ -9,9 +9,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class RegisterPage extends ManagedPage {
-    public RegisterPage(StageManager stageManager) {
-        super(stageManager);
+public class RegisterPage extends ControlledPage{
+    public RegisterPage(StageController stageController) {
+        super(stageController);
     }
     /**
     * @Description: Generate register page
@@ -45,7 +45,7 @@ public class RegisterPage extends ManagedPage {
         Button register_button = new Button("Register");
 
         Button goRegister_btn = new Button("Already have an account?");
-        goRegister_btn.setOnMouseClicked(event -> stageManager.showStage(MainApp.loginPageID));
+        goRegister_btn.setOnMouseClicked(event -> stageController.showStage(MainApp.loginPageID));
         register_button.setPrefWidth(200);
         register_button.setMinHeight(50);
         VBox vbox = new VBox();
