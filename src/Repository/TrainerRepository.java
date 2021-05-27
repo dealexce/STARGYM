@@ -129,6 +129,7 @@ public class TrainerRepository extends DataRepository {
         if (course == null) {
             return false;
         } else {
+            course.setCourseId(courseRepository.getNextId());
             course.setTrainerId(trainer.getUserId());
             courseRepository.add(course);
             temp.add(course);

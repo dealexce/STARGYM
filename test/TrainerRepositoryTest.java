@@ -39,11 +39,6 @@ class TrainerRepositoryTest {
 
     @Test
     void login() {
-        assertTrue(repository.login("Tr10001","fc2123"));
-    }
-
-    @Test
-    void register(){
-        assertTrue(repository.register("Peter","12345678"));
+        assertTrue(repository.login("Tr10001", "fc2123"));
     }
 }

@@ -11,6 +11,7 @@ import java.util.Date;
 public class Exercise implements Serializable {
 
 
+    private static final long serialVersionUID = -4333716633146060344L;
     private String exerciseId;
     private String trainerId;
     private String traineeId;

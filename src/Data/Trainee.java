@@ -9,10 +9,12 @@ import java.util.List;
  * Data class of trainee users
  */
 public class Trainee extends User implements Serializable {
+    private static final long serialVersionUID = 4847083491969217078L;
     // Type of members of the user (Normal, Member and VIPMember)
     private String userType;
     private List<Course> favoriteCourses;
     private List<Trainer> favoriteTrainers;
+    private List<Exercise> myExercises;
 
     public List<Exercise> getMyExercises() {
         return myExercises;
@@ -21,8 +23,6 @@ public class Trainee extends User implements Serializable {
     public void setMyExercises(List<Exercise> myExercises) {
         this.myExercises = myExercises;
     }
-
-    private List<Exercise> myExercises;
 
     public Trainee(String userId, String userName, String passWord, String telephone, String sex, int height, int weight) {
         super(userId, userName, passWord, telephone, sex, height, weight);

@@ -8,6 +8,7 @@ import java.io.Serializable;
  * Abstract class of all the users in the software
  */
 public  class User implements Serializable {
+    private static final long serialVersionUID = 904001807833955222L;
     private String userId;
     private String userName;
     private String passWord;

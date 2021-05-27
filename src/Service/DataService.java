@@ -2,6 +2,7 @@ package Service;
 
 import Data.*;
 import Repository.CourseRepository;
+import Repository.ExerciseRepository;
 import Repository.TraineeRepository;
 import Repository.TrainerRepository;
 
@@ -18,6 +19,7 @@ public class DataService {
     private CourseRepository courseRepository;
     private TrainerRepository trainerRepository;
     private TraineeRepository traineeRepository;
+    private ExerciseRepository exerciseRepository;
 
     public boolean isLogin() {
         return isLogin;
@@ -30,6 +32,7 @@ public class DataService {
         this.courseRepository = new CourseRepository();
         this.trainerRepository = new TrainerRepository();
         this.traineeRepository = new TraineeRepository();
+        this.exerciseRepository = new ExerciseRepository();
     }
 
     public DataService(Trainer trainer) {
@@ -37,12 +40,14 @@ public class DataService {
         this.courseRepository = new CourseRepository();
         this.trainerRepository = new TrainerRepository();
         this.traineeRepository = new TraineeRepository();
+        this.exerciseRepository = new ExerciseRepository();
     }
 
     public DataService() {
         this.courseRepository = new CourseRepository();
         this.trainerRepository = new TrainerRepository();
         this.traineeRepository = new TraineeRepository();
+        this.exerciseRepository = new ExerciseRepository();
     }
 
     public Trainee getTrainee() {
@@ -137,6 +142,17 @@ public class DataService {
     }
 
     /**
+     * Trainee remove a course from the favorites
+     * @param courseId the id of the course to be removed
+     * @return true if success and false if fail
+     */
+    public boolean traineeDeleteCourse(String courseId){
+        boolean result = traineeRepository.deleteCourse(trainee,courseId);
+        refresh();
+        return result;
+    }
+
+    /**
      * Trainee add a trainer to favorite
      * @param trainerId the trainer id
      * @return true if success and false if fail
@@ -154,6 +170,48 @@ public class DataService {
      */
     public boolean trainerCreateCourse(Course course){
         boolean result = trainerRepository.createCourse(trainer, course);
+        refresh();
+        return result;
+    }
+
+    /**
+     * A trainee create a new exercise
+     * @param TrainerId the trainer's id
+     * @param date the date of the exercise
+     * @param timestamp a int range from 0 to 12 related to 24h per day
+     * @param description the detail information
+     * @return true if success and false if fail
+     */
+    public boolean traineeCreateExercise(String TrainerId, Date date, int timestamp, String description){
+        Exercise exercise = new Exercise();
+        exercise.setTraineeId(trainee.getUserId());
+        exercise.setDate(date);
+        exercise.setTrainerId(TrainerId);
+        exercise.setDescription(description);
+        exercise.setTimeStamp(timestamp);
+        boolean result = traineeRepository.createExercise(trainee,exercise);
+        refresh();
+        return result;
+    }
+
+    /**
+     * Trainee cancel an existed exercise
+     * @param exerciseId the id of the exercise to be canceled
+     * @return true if success and false if fail
+     */
+    public boolean traineeCancelExercise(String exerciseId){
+        boolean result = traineeRepository.cancelExercise(trainee,exerciseId);
+        refresh();
+        return result;
+    }
+
+    /**
+     * Change the membership type for a trainee
+     * @param category 1 for Normal, 2 for Member and 3 for VIP Member
+     * @return true if success and false if fail
+     */
+    public boolean traineeChangeMembership(int category){
+        boolean result = traineeRepository.registerMembership(trainee, category);
         refresh();
         return result;
     }

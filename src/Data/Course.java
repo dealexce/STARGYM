@@ -8,6 +8,7 @@ import java.io.Serializable;
  * Data class of the course
  */
 public class Course implements Serializable {
+    private static final long serialVersionUID = 2813118854261470444L;
     private String courseId;
     private String trainerId;
     private String title;

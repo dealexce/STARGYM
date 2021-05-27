@@ -9,6 +9,7 @@ import java.util.List;
  * Data class of trainer users
  */
 public class Trainer extends User implements Serializable {
+    private static final long serialVersionUID = -4442956616964847510L;
     private int level;
     private String introduction;
     private List<Trainee> myTrainees;
