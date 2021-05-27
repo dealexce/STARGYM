@@ -3,7 +3,6 @@ package UI.Controller;
 import Data.Course;
 import UI.Page;
 import UI.Path;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -21,13 +20,13 @@ import java.util.List;
  * @description: Controller of AllCoursesPage
  * @author: Haopu Chen
  **/
-public class AllCoursesController extends Page {
+public class FavoriteCoursesController extends Page {
     @FXML
     private FlowPane coursePane;
 
     @Override
     public String getLocalPath() {
-        return Path.ALLCOURSES;
+        return Path.FAVORITECOURSE;
     }
 
     @Override
@@ -36,7 +35,7 @@ public class AllCoursesController extends Page {
     }
 
     private void genCourseBox(){
-        List<Course> courses = this.stageManager.getDataService().getAllCourse();
+        List<Course> courses = this.stageManager.getDataService().getTrainee().getFavoriteCourses();
         for(Course course:courses){
             GridPane gp = new GridPane();
             gp.setPrefSize(240,170);
@@ -60,9 +59,9 @@ public class AllCoursesController extends Page {
             gp2.setMinWidth(240);
             Label lbl2 = new Label(course.getCourseId());
             lbl2.setPrefSize(180,15);
-            Button btn2 = new Button("Like");
+            Button btn2 = new Button("Remove");
             btn2.setMinWidth(60);
-            btn2.setOnMouseClicked(e->like(course));
+            btn2.setOnMouseClicked(e->remove(course));
             Button btn3 = new Button("Start");
             btn3.setMinWidth(60);
             btn3.setOnMouseClicked(e->start(course));
@@ -78,18 +77,10 @@ public class AllCoursesController extends Page {
         }
     }
 
-    private void like(Course course){
-        if(this.stageManager.getDataService().getTrainee()!=null){
-            this.stageManager.getDataService().traineeAddCourse(course.getCourseId());
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Success");
-            alert.setContentText("You like this courses! You can see this course in your personal page then.");
-            alert.showAndWait();
-        }else{
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Fail to like this course");
-            alert.setContentText("Only members can like a course. Please login as a member first.");
-            alert.showAndWait();
+    private void remove(Course course){
+        if(confirm("Remove Confirm","Are you sure you want to remove this course from favorite?")){
+            this.stageManager.getDataService().traineeDeleteCourse(course.getCourseId());
+            this.stageManager.stageRedirect(getLocalPath(),getLocalPath());
         }
     }
 
@@ -97,7 +88,7 @@ public class AllCoursesController extends Page {
         this.stageManager.openStage(Path.COURSEPLAYER,course);
     }
 
-    public void goHome(){
-        this.stageManager.stageRedirect(getLocalPath(),Path.HOME);
+    public void goPersonal(){
+        this.stageManager.stageRedirect(getLocalPath(),Path.MEMBERPERSONAL);
     }
 }

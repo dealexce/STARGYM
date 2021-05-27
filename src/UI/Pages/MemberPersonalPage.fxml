@@ -99,7 +99,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" text="view all" />
+                        <Button mnemonicParsing="false" onAction="#goFavoriteCourse" text="view all" />
                      </children>
                   </HBox>
                   <HBox fx:id="courseHBox" prefHeight="100.0" prefWidth="200.0" spacing="60.0">

@@ -2,18 +2,14 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.AllTrainersController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.FavoriteCoursesController">
    <top>
       <VBox prefHeight="66.0" prefWidth="600.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#goHome" text="&lt;HOME" />
+            <Button mnemonicParsing="false" onAction="#goPersonal" text="&lt;My Info" />
             <GridPane>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -23,7 +19,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="ALL TRAINERS">
+                  <Label text="FAVORITE COURSES">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -51,13 +47,14 @@
    <center>
       <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="TOP_CENTER">
          <content>
-            <VBox fx:id="trainerBox" alignment="TOP_CENTER" fillWidth="false" spacing="10.0" style="-fx-background-color: white;">
+            <FlowPane fx:id="coursePane" columnHalignment="CENTER" hgap="20.0" prefHeight="200.0" prefWidth="200.0" vgap="20.0">
                <children>
+
+
                </children>
                <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </VBox>
+                  <Insets bottom="20.0" left="100.0" right="100.0" top="20.0" />
+               </padding></FlowPane>
          </content>
       </ScrollPane>
    </center>

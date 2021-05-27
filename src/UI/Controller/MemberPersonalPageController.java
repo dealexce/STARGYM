@@ -198,4 +198,8 @@ public class MemberPersonalPageController extends Page {
     public void goHome() {
         this.stageManager.stageRedirect(this.getLocalPath(), Path.HOME);
     }
+
+    public void goFavoriteCourse(){
+        this.stageManager.stageRedirect(this.getLocalPath(),Path.FAVORITECOURSE);
+    }
 }

@@ -27,8 +27,12 @@ public abstract class Page implements Managed{
     }
 
     @Override
-    public void init() {
+    public void init(){
 
+    }
+
+    public void init(Object o) {
+        init();
     }
 
     protected void notice(String title, String message, Alert.AlertType type){

@@ -55,8 +55,35 @@ public class StageManager {
                 e.printStackTrace();
             }
         }
-
     }
+
+    public void openStage(String resource,Object o){
+        Stage tempStage = stages.get(resource);
+        if(tempStage!=null){
+            tempStage.show();
+            tempStage.toFront();
+        }else{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(resource));
+            Parent p = null;
+            try {
+                p = loader.load();
+                Page page = (Page) loader.getController();
+                page.setStageManager(this);
+                page.init(o);
+
+
+                Scene scene = new Scene(p);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                this.addStage(resource,stage);
+                this.showStage(resource);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     /**
      * get the stage with respond to given name
@@ -123,6 +150,11 @@ public class StageManager {
     public void stageRedirect(String oldStageName, String newStageName){
         closeStage(oldStageName);
         openStage(newStageName);
+    }
+
+    public void stageRedirect(String oldStageName, String newStageName, Object o){
+        closeStage(oldStageName);
+        openStage(newStageName,o);
     }
 
 
