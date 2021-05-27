@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.CoursePlay">
+   <children>
+      <Pane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <VBox layoutX="1.0" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="600.0" spacing="100.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="HOME">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Label text="Course Player">
+                           <font>
+                              <Font name="System Bold Italic" size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="342.0" prefWidth="600.0">
+                     <children>
+                        <VBox prefHeight="342.0" prefWidth="400.0">
+                           <children>
+                              <ImageView fitHeight="277.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Resources/Player/best-fitness-classes.gif" />
+                                 </image>
+                              </ImageView>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Start" />
+                                    <Button mnemonicParsing="false" text="Pause" />
+                                    <ProgressBar prefWidth="175.0" progress="0.75" />
+                                    <Label text="00:00/00:00" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding></VBox>
+                        <VBox prefHeight="342.0" prefWidth="181.0" spacing="15.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="171.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Title" textFill="#423aa4">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Fitness">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="171.0" spacing="15.0">
+                                 <children>
+                                    <Label prefHeight="32.0" prefWidth="61.0" text="Trainer" textFill="#423aa4">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Mr.Tang">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="204.0" prefWidth="171.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Intro" textFill="#423aa4">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Basic introduction of fitness" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
