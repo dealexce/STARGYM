@@ -4,7 +4,6 @@ import Service.DataService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,10 +40,10 @@ public class StageManager {
             loader.setLocation(getClass().getResource(resource));
             Parent p = null;
             try {
-                p = loader. load();
-                ManagedPage managedPage = (ManagedPage) loader.getController();
-                managedPage.setStageManager(this);
-                managedPage.init();
+                p = loader.load();
+                Page page = (Page) loader.getController();
+                page.setStageManager(this);
+                page.init();
 
 
                 Scene scene = new Scene(p);

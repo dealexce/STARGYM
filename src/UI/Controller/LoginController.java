@@ -1,6 +1,6 @@
 package UI.Controller;
 
-import UI.ManagedPage;
+import UI.Page;
 import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,13 +13,18 @@ import javafx.scene.control.TextField;
  * @description: Controller of LoginPage
  * @author: Haopu Chen
  **/
-public class LoginController extends ManagedPage {
+public class LoginController extends Page {
     @FXML
     private RadioButton member,trainer;
     @FXML
     private TextField userId,password;
 
-    public void login(ActionEvent actionEvent) {
+    @Override
+    public String getLocalPath() {
+        return Path.HOME;
+    }
+
+    public void login() {
         if(member.isSelected()){
             if(this.stageManager.getDataService().loginAsTrainee(userId.getText(),password.getText())){
                 this.stageManager.closeStage(Path.LOGIN);
@@ -45,7 +50,7 @@ public class LoginController extends ManagedPage {
 
     }
 
-    public void goRegister(ActionEvent actionEvent) {
+    public void goRegister() {
         this.stageManager.closeStage(Path.LOGIN);
         this.stageManager.openStage(Path.REGISTER);
     }

@@ -83,6 +83,9 @@ public class TraineeRepository extends DataRepository {
         if (trainer == null) {
             return false;
         } else {
+            if(temp.contains(trainer)){
+                return true;
+            }
             temp.add(trainer);
             trainee.setFavoriteTrainers(temp);
             return add(trainee);
@@ -125,6 +128,9 @@ public class TraineeRepository extends DataRepository {
         if (course == null) {
             return false;
         } else {
+            if(temp.contains(course)){
+                return true;
+            }
             temp.add(course);
             trainee.setFavoriteCourses(temp);
             return add(trainee);

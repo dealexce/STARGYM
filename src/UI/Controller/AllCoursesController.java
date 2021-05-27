@@ -1,17 +1,15 @@
 package UI.Controller;
 
 import Data.Course;
-import UI.ManagedPage;
+import UI.Page;
 import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -23,13 +21,13 @@ import java.util.List;
  * @description: Controller of AllCoursesPage
  * @author: Haopu Chen
  **/
-public class AllCoursesController extends ManagedPage {
+public class AllCoursesController extends Page {
     @FXML
     private FlowPane coursePane;
 
-    public static final String path = Path.ALLCOURSES;
-    public void goHome(ActionEvent actionEvent) {
-        this.stageManager.stageRedirect(path,Path.HOME);
+    @Override
+    public String getLocalPath() {
+        return Path.ALLCOURSES;
     }
 
     @Override
@@ -44,7 +42,7 @@ public class AllCoursesController extends ManagedPage {
             gp.setPrefSize(240,170);
             gp.setMinSize(240,170);
             gp.setStyle("-fx-background-color: white");
-            String url = System.getProperty("user.dir")+ "\\res\\Course\\C1.png";
+            String url = System.getProperty("user.dir")+ "\\Resources\\Course\\C1.png";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(120);
@@ -92,5 +90,9 @@ public class AllCoursesController extends ManagedPage {
             alert.setContentText("Only members can like a course. Please login as a member first.");
             alert.showAndWait();
         }
+    }
+
+    public void goHome(){
+        this.stageManager.stageRedirect(getLocalPath(),Path.HOME);
     }
 }

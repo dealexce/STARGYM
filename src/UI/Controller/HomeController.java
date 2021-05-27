@@ -1,13 +1,13 @@
 package UI.Controller;
 
 import Data.Course;
-import Data.Trainee;
 import Data.Trainer;
-import UI.ManagedPage;
+import UI.Page;
 import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -21,8 +21,11 @@ import java.util.List;
  * @description: Controller of HomePage
  * @author: Haopu Chen
  **/
-public class HomeController extends ManagedPage {
-    private static final String path = Path.HOME;
+public class HomeController extends Page {
+    @Override
+    public String getLocalPath() {
+        return Path.HOME;
+    }
 
     @FXML
     private HBox loginInfo;
@@ -63,7 +66,7 @@ public class HomeController extends ManagedPage {
             vb.setMinSize(150,130);
             vb.setPrefSize(150,130);
 
-            String url = System.getProperty("user.dir")+ "\\res\\Course\\C1.png";
+            String url = System.getProperty("user.dir")+ "\\Resources\\Courses\\C1.png";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(100);
@@ -88,25 +91,27 @@ public class HomeController extends ManagedPage {
             GridPane gp = new GridPane();
             gp.setMinSize(300,110);
             gp.setPrefSize(300,110);
-            gp.setPadding(new Insets(5));
+            gp.setPadding(new Insets(10));
             gp.setStyle("-fx-border-color: black;");
 
-            String url = System.getProperty("user.dir")+ "\\res\\Trainer\\T1.png";
+            String url = System.getProperty("user.dir")+ "\\Resources\\Trainers\\T1.png";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
-            imgv.setFitHeight(110);
-            imgv.setFitWidth(110);
+            imgv.setFitHeight(90);
+            imgv.setFitWidth(90);
             imgv.setPreserveRatio(true);
             imgv.setPickOnBounds(true);
 
             VBox vb = new VBox();
+            vb.setAlignment(Pos.CENTER_LEFT);
             vb.setPrefSize(100,200);
             vb.setSpacing(5);
-
+            vb.setPadding(new Insets(0,20,0,20));
             Label lbl = new Label(trainer.getUserName());
             lbl.setFont(Font.font(18));
+            Label lbl2 = new Label("Level: "+trainer.getLevel());
 
-            vb.getChildren().addAll(lbl);
+            vb.getChildren().addAll(lbl,lbl2);
             gp.add(imgv,0,0);
             gp.add(vb,1,0);
             trainerPane.getChildren().add(gp);
@@ -116,22 +121,22 @@ public class HomeController extends ManagedPage {
     }
 
     private void goMyInfo() {
-        this.stageManager.stageRedirect(path,Path.MEMBERPERSONAL);
+        this.stageManager.stageRedirect(getLocalPath(),Path.MEMBERPERSONAL);
     }
 
     private void goLogin(){
-        this.stageManager.stageRedirect(path,Path.LOGIN);
+        this.stageManager.stageRedirect(getLocalPath(),Path.LOGIN);
     }
 
     private void goRegister(){
-        this.stageManager.stageRedirect(path,Path.REGISTER);
+        this.stageManager.stageRedirect(getLocalPath(),Path.REGISTER);
     }
 
     public void goAllCourses(ActionEvent actionEvent) {
-        this.stageManager.stageRedirect(path,Path.ALLCOURSES);
+        this.stageManager.stageRedirect(getLocalPath(),Path.ALLCOURSES);
     }
 
     public void goAllTrainers(ActionEvent actionEvent) {
-        this.stageManager.stageRedirect(path,Path.ALLTRAINERS);
+        this.stageManager.stageRedirect(getLocalPath(),Path.ALLTRAINERS);
     }
 }

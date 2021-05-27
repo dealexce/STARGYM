@@ -2,17 +2,15 @@ package UI.Controller;
 
 import Data.Course;
 import Data.Trainer;
-import UI.ManagedPage;
+import UI.Page;
 import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -25,12 +23,12 @@ import java.util.List;
  * @description: Controller of AllTrainersPage
  * @author: Haopu Chen
  **/
-public class AllTrainersController extends ManagedPage {
+public class AllTrainersController extends Page {
     @FXML
     private VBox trainerBox;
-    public static final String path = Path.ALLTRAINERS;
-    public void goHome(ActionEvent actionEvent) {
-        this.stageManager.stageRedirect(path,Path.HOME);
+    @Override
+    public String getLocalPath() {
+        return Path.ALLTRAINERS;
     }
 
     @Override
@@ -45,7 +43,7 @@ public class AllTrainersController extends ManagedPage {
             bp.setPrefSize(600,100);
             bp.setMinSize(600,100);
             bp.setStyle("-fx-border-color: lightgrey; -fx-background-color: FCFCFC;");
-            String url = System.getProperty("user.dir")+ "\\res\\Trainers\\T1.png";
+            String url = System.getProperty("user.dir")+ "\\Resources\\Trainers\\T1.png";
             javafx.scene.image.Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(80);
@@ -66,23 +64,41 @@ public class AllTrainersController extends ManagedPage {
             lbl2.setTextFill(Color.BLUE);
             Label lbl3 = new Label(trainer.getIntroduction());
             vb.getChildren().addAll(lbl,lbl2,lbl3);
+            vb.setAlignment(Pos.CENTER_LEFT);
             BorderPane.setMargin(vb,new Insets(10));
             BorderPane.setAlignment(vb, Pos.CENTER);
             bp.setCenter(vb);
 
             VBox vb2 = new VBox();
             vb2.setPrefSize(100,200);
+            vb2.setSpacing(5);
             Button btn = new Button("Book");
+            btn.setPrefWidth(70);
             Button btn2 = new Button("Like");
+            btn2.setOnMouseClicked(e->like(trainer));
+            btn2.setPrefWidth(70);
             vb2.getChildren().addAll(btn,btn2);
-            BorderPane.setMargin(vb2,new Insets(15,10,5,15));
+            vb2.setAlignment(Pos.CENTER_RIGHT);
             bp.setRight(vb2);
 
-
+            bp.setPadding(new Insets(20));
 
             trainerBox.getChildren().add(bp);
 
         }
+    }
+
+    private void like(Trainer trainer){
+        if(this.stageManager.getDataService().getTrainee()!=null){
+            this.stageManager.getDataService().traineeAddTrainer(trainer.getUserId());
+            notice("Success","You like this trainer! You can see this trainer in your personal page then.", Alert.AlertType.INFORMATION);
+        }else{
+            notice("Fail","Only members can like a course. Please login as a member first.", Alert.AlertType.WARNING);
+        }
+    }
+
+    public void goHome(){
+        this.stageManager.stageRedirect(getLocalPath(),Path.HOME);
     }
 
 }

@@ -153,6 +153,17 @@ public class DataService {
     }
 
     /**
+     * Trainee remove a trainer from the favorites
+     * @param trainerId the id of the course to be removed
+     * @return true if success and false if fail
+     */
+    public boolean traineeDeleteTrainer(String trainerId){
+        boolean result = traineeRepository.deleteTrainer(trainee,trainerId);
+        refresh();
+        return result;
+    }
+
+    /**
      * Trainee add a trainer to favorite
      * @param trainerId the trainer id
      * @return true if success and false if fail
