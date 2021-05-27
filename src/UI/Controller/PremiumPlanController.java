@@ -1,5 +1,7 @@
-package UI;
+package UI.Controller;
 
+import UI.ManagedPage;
+import UI.Path;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;

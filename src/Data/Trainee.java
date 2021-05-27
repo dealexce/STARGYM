@@ -1,6 +1,7 @@
 package Data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,9 +13,9 @@ public class Trainee extends User implements Serializable {
     private static final long serialVersionUID = 4847083491969217078L;
     // Type of members of the user (Normal, Member and VIPMember)
     private String userType;
-    private List<Course> favoriteCourses;
-    private List<Trainer> favoriteTrainers;
-    private List<Exercise> myExercises;
+    private List<Course> favoriteCourses = new ArrayList<>();
+    private List<Trainer> favoriteTrainers = new ArrayList<>();
+    private List<Exercise> myExercises = new ArrayList<>();
 
     public List<Exercise> getMyExercises() {
         return myExercises;

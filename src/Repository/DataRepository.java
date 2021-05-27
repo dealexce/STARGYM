@@ -75,9 +75,6 @@ public class DataRepository {
     public String getNextId(){
         File file  = new File(this.getFilePath());
         File[] array = file.listFiles();
-        if(array.length==0){
-            return "Tr10001";
-        }
         String lastFileName = array[array.length-1].getName();
         String[] temp = lastFileName.split("\\.");
         StringBuilder sb = new StringBuilder();

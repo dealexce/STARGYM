@@ -82,7 +82,10 @@ public class TrainerRepository extends DataRepository {
      * @return true if success and false if fail
      */
     public boolean addTrainee(Trainer trainer, String traineeID) {
-        List<Trainee> temp = trainer.getMyTrainees();
+        List<Trainee> temp = new ArrayList<>();
+        if(trainer.getMyTrainees() != null){
+            temp = trainer.getMyTrainees();
+        }
         TraineeRepository traineeRepository = new TraineeRepository();
         Trainee trainee = traineeRepository.getById(traineeID);
         if (trainee == null) {
@@ -124,7 +127,10 @@ public class TrainerRepository extends DataRepository {
      * @return true if success and false if fail
      */
     public boolean createCourse(Trainer trainer, Course course) {
-        List<Course> temp = trainer.getMyCourses();
+        List<Course> temp = new ArrayList<>();
+        if(trainer.getMyCourses()!=null){
+            temp = trainer.getMyCourses();
+        }
         CourseRepository courseRepository = new CourseRepository();
         if (course == null) {
             return false;
@@ -193,7 +199,10 @@ public class TrainerRepository extends DataRepository {
      * @return
      */
     public boolean addMyExercises(Trainer trainer, Exercise exercise){
-        List<Exercise> temp = trainer.getMyExercises();
+        List<Exercise> temp = new ArrayList<>();
+        if(trainer.getMyExercises() != null){
+            temp = trainer.getMyExercises();
+        }
         if (exercise == null) {
             return false;
         } else {

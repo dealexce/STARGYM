@@ -1,5 +1,8 @@
-package UI;
+package UI.Controller;
 
+import UI.ManagedPage;
+import UI.Path;
+import UI.StageManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;

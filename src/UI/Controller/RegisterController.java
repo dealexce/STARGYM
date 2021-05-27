@@ -1,6 +1,8 @@
-package UI;
+package UI.Controller;
 
 import Data.Trainee;
+import UI.ManagedPage;
+import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -10,7 +12,7 @@ import java.io.IOException;
 
 import Repository.TraineeRepository;
 
-public class RegisterController extends ManagedPage{
+public class RegisterController extends ManagedPage {
     /**
      * @description: Controller of RegisterPage
      * @author: Haopu Chen

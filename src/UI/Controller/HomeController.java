@@ -1,8 +1,10 @@
-package UI;
+package UI.Controller;
 
 import Data.Course;
 import Data.Trainee;
 import Data.Trainer;
+import UI.ManagedPage;
+import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -19,7 +21,7 @@ import java.util.List;
  * @description: Controller of HomePage
  * @author: Haopu Chen
  **/
-public class HomeController extends ManagedPage{
+public class HomeController extends ManagedPage {
     private static final String path = Path.HOME;
 
     @FXML

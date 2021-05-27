@@ -1,5 +1,7 @@
-package UI;
+package UI.Controller;
 
+import UI.ManagedPage;
+import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -11,7 +13,7 @@ import javafx.scene.control.TextField;
  * @description: Controller of LoginPage
  * @author: Haopu Chen
  **/
-public class LoginController extends ManagedPage{
+public class LoginController extends ManagedPage {
     @FXML
     private RadioButton member,trainer;
     @FXML

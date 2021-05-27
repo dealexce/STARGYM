@@ -1,7 +1,9 @@
-package UI;
+package UI.Controller;
 
 import Data.Course;
 import Data.Trainer;
+import UI.ManagedPage;
+import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -23,7 +25,7 @@ import java.util.List;
  * @description: Controller of AllTrainersPage
  * @author: Haopu Chen
  **/
-public class AllTrainersController extends ManagedPage{
+public class AllTrainersController extends ManagedPage {
     @FXML
     private VBox trainerBox;
     public static final String path = Path.ALLTRAINERS;

@@ -1,6 +1,8 @@
-package UI;
+package UI.Controller;
 
 import Data.Course;
+import UI.ManagedPage;
+import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -21,7 +23,7 @@ import java.util.List;
  * @description: Controller of AllCoursesPage
  * @author: Haopu Chen
  **/
-public class AllCoursesController extends ManagedPage{
+public class AllCoursesController extends ManagedPage {
     @FXML
     private FlowPane coursePane;
 

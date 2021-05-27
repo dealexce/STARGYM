@@ -15,10 +15,10 @@ public class FormatUtil {
      * @param number The telephone number
      * @return true if valid and false if invalid
      */
-    public static boolean checkTelephone(int number) {
+    public static boolean checkTelephone(String number) {
         // A telephone number must has 11 numbers and starts with 1
         Pattern pattern = Pattern.compile("^[1]\\d{10}$");
-        return pattern.matcher(Integer.toString(number)).matches();
+        return pattern.matcher(number).matches();
     }
 
     /**
