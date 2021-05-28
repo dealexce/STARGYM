@@ -58,7 +58,6 @@ public class MemberPersonalPageController extends Page {
         genFavoriteCourses();
         genExercises();
         genFavoriteTrainers();
-        stageManager.openStage(Path.LIVESESSION);
     }
 
     private void genBasicInfo(){
