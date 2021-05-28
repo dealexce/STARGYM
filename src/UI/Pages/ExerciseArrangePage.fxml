@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-   <content>
-      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="502.0" spacing="50.0">
+<VBox minHeight="750.0" minWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.ExerciseArrangeController">
+   <children>
+      <VBox alignment="TOP_CENTER" spacing="50.0">
          <children>
             <Label text="Exercise Arrange">
                <font>
@@ -17,89 +17,92 @@
                   <Insets top="50.0" />
                </VBox.margin>
             </Label>
-            <GridPane prefHeight="267.0" prefWidth="502.0">
+            <GridPane maxWidth="250.0" prefWidth="250.0" vgap="10.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="108.4" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="110.4" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
-              </rowConstraints>
                <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                  <VBox layoutX="10.0" layoutY="51.0">
                      <children>
-                        <Label text="Name">
+                        <Label text="Personal Session with:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="30.0" prefWidth="105.0" />
+                        <Label fx:id="trainerInfo" layoutX="10.0" layoutY="10.0" text="Tang (No.Tr10001)" textFill="BLUE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Topic">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="topic" />
                      </children>
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
-                     <padding>
-                        <Insets left="110.0" right="120.0" top="20.0" />
-                     </padding>
                   </VBox>
-                  <VBox prefHeight="57.0" prefWidth="502.0" GridPane.rowIndex="1">
+                  <VBox alignment="CENTER_LEFT" spacing="10.0" GridPane.rowIndex="2">
                      <children>
-                        <Label text="Time">
+                        <Label text="Date">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
-                           <children>
-                              <ComboBox prefWidth="75.0" />
-                              <Label text="to">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox prefWidth="75.0" />
-                           </children>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </HBox>
+                        <DatePicker fx:id="datePicker" minWidth="250.0" />
                      </children>
-                     <padding>
-                        <Insets left="110.0" />
-                     </padding></VBox>
-                  <VBox prefHeight="99.0" prefWidth="502.0" spacing="10.0" GridPane.rowIndex="2">
+                  </VBox>
+                  <VBox spacing="10.0" GridPane.rowIndex="3">
                      <children>
-                        <Label text="Period">
+                        <Label text="Session">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ComboBox prefWidth="150.0" />
+                        <ComboBox fx:id="session" prefWidth="250.0" />
                      </children>
-                     <padding>
-                        <Insets left="110.0" right="120.0" top="20.0" />
-                     </padding></VBox>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="4">
+                     <children>
+                        <Label text="Description">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
                </children>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
             </GridPane>
-            <HBox alignment="CENTER_LEFT" prefHeight="136.0" prefWidth="502.0" spacing="125.0">
+            <HBox alignment="CENTER" spacing="80.0">
                <children>
-                  <Button mnemonicParsing="false" text="Remove">
+                  <Button mnemonicParsing="false" onAction="#cancel" text="Cancel">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="Save">
+                  <Button mnemonicParsing="false" onAction="#save" text="Save">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
                </children>
-               <padding>
-                  <Insets left="110.0" />
-               </padding>
             </HBox>
          </children>
       </VBox>
-   </content>
-</ScrollPane>
+   </children>
+</VBox>

@@ -1,6 +1,7 @@
 package UI.Controller;
 
 import Data.Course;
+import Service.SearchService;
 import UI.Page;
 import UI.Path;
 import javafx.event.ActionEvent;
@@ -8,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -24,6 +26,8 @@ import java.util.List;
 public class AllCoursesController extends Page {
     @FXML
     private FlowPane coursePane;
+    @FXML
+    private TextField searchWord;
 
     @Override
     public String getLocalPath() {
@@ -32,11 +36,17 @@ public class AllCoursesController extends Page {
 
     @Override
     public void init() {
-        genCourseBox();
+        genCourseBox(this.stageManager.getDataService().getAllCourse());
     }
 
-    private void genCourseBox(){
-        List<Course> courses = this.stageManager.getDataService().getAllCourse();
+    @FXML
+    void search(){
+        List<Course> courses = SearchService.searchCourse(searchWord.getText(),stageManager.getDataService().getAllCourse());
+        genCourseBox(courses);
+    }
+
+    private void genCourseBox(List<Course> courses){
+        coursePane.getChildren().clear();
         for(Course course:courses){
             GridPane gp = new GridPane();
             gp.setPrefSize(240,170);

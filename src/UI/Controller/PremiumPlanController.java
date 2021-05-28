@@ -15,7 +15,7 @@ public class PremiumPlanController extends Page {
 
     @Override
     public String getLocalPath() {
-        return Path.PREMIUM;
+        return Path.VIPREGISTER;
     }
 
 

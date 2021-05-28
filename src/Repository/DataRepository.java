@@ -50,7 +50,7 @@ public class DataRepository {
         try
         {
             String fileName = id + ".ser";
-            FileInputStream fileIn = new FileInputStream(this.filePath+"/"+fileName);
+            FileInputStream fileIn = new FileInputStream(this.filePath+"\\"+fileName);
             ObjectInputStream in = new ObjectInputStream(fileIn);
             ret = in.readObject();
             in.close();
@@ -75,7 +75,8 @@ public class DataRepository {
     public String getNextId(){
         File file  = new File(this.getFilePath());
         File[] array = file.listFiles();
-        String lastFileName = array[array.length-1].getName();
+        String lastFileName;
+        lastFileName = array[array.length-1].getName();
         String[] temp = lastFileName.split("\\.");
         StringBuilder sb = new StringBuilder();
         int number = Integer.parseInt(temp[0].substring(2)) + 1;

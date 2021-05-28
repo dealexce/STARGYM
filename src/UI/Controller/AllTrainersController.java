@@ -2,6 +2,7 @@ package UI.Controller;
 
 import Data.Course;
 import Data.Trainer;
+import Service.SearchService;
 import UI.Page;
 import UI.Path;
 import javafx.event.ActionEvent;
@@ -14,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.TriangleMesh;
 import javafx.scene.text.Font;
 import javafx.scene.control.*;
 
@@ -26,18 +28,28 @@ import java.util.List;
 public class AllTrainersController extends Page {
     @FXML
     private VBox trainerBox;
+    @FXML
+    private TextField searchWord;
     @Override
     public String getLocalPath() {
         return Path.ALLTRAINERS;
     }
 
+
+
     @Override
     public void init() {
-        genTrainerBox();
+        genTrainerBox(this.stageManager.getDataService().getAllTrainer());
     }
 
-    private void genTrainerBox(){
-        List<Trainer> trainers = this.stageManager.getDataService().getAllTrainer();
+    @FXML
+    void search(){
+        List<Trainer> trainers = SearchService.searchTrainer(searchWord.getText(),this.stageManager.getDataService().getAllTrainer());
+        genTrainerBox(trainers);
+    }
+
+    private void genTrainerBox(List<Trainer> trainers){
+        trainerBox.getChildren().clear();
         for(Trainer trainer:trainers){
             BorderPane bp = new BorderPane();
             bp.setPrefSize(600,100);
@@ -73,6 +85,7 @@ public class AllTrainersController extends Page {
             vb2.setPrefSize(100,200);
             vb2.setSpacing(5);
             Button btn = new Button("Book");
+            btn.setOnMouseClicked(e->book(trainer));
             btn.setPrefWidth(70);
             Button btn2 = new Button("Like");
             btn2.setOnMouseClicked(e->like(trainer));
@@ -99,6 +112,10 @@ public class AllTrainersController extends Page {
 
     public void goHome(){
         this.stageManager.stageRedirect(getLocalPath(),Path.HOME);
+    }
+
+    public void book(Trainer trainer){
+        this.stageManager.openStage(Path.EXERCISEARRANGE,trainer);
     }
 
 }

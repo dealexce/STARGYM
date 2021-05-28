@@ -4,7 +4,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <ScrollPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.MemberPersonalPageController">
@@ -42,7 +41,7 @@
                                  </children>
                               </HBox>
                               <Label fx:id="basic" text="56 kg | Male | BMI: 23.0" />
-                              <Button mnemonicParsing="false" text="Edit portfolio" />
+                              <Button mnemonicParsing="false" onAction="#goInfoChange" text="Edit portfolio" />
                            </children>
                         </VBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="2">
@@ -120,72 +119,7 @@
                         <Button mnemonicParsing="false" text="view all" />
                      </children>
                   </HBox>
-                  <VBox fx:id="exerciseVBox" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-                     <children>
-                        <GridPane minHeight="70.0" style="-fx-border-color: black; -fx-background-color: whitesmoke;">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" />
-                              <ColumnConstraints hgrow="SOMETIMES" />
-                           </columnConstraints>
-                           <rowConstraints>
-                                 <RowConstraints vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0">
-                                 <children>
-                                    <Label text="Exercise name">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Line endX="100.0" startX="-100.0" />
-                                    <Label text="Time: 00:00 - 23:59" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefWidth="70.0" text="Attend" />
-                                    <Button mnemonicParsing="false" prefWidth="70.0" text="Detail" />
-                                 </children>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="20.0" right="50.0" top="5.0" />
-                           </padding>
-                        </GridPane>
-                        <GridPane minHeight="70.0" style="-fx-border-color: black; -fx-background-color: whitesmoke;">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0">
-                                 <children>
-                                    <Label text="Exercise name">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Line endX="100.0" startX="-100.0" />
-                                    <Label text="Time: 00:00 - 23:59" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefWidth="70.0" text="Attend" />
-                                    <Button mnemonicParsing="false" prefWidth="70.0" text="Detail" />
-                                 </children>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="20.0" right="50.0" top="5.0" />
-                           </padding>
-                        </GridPane>
-                     </children>
-                  </VBox>
+                  <VBox fx:id="exerciseVBox" prefHeight="200.0" prefWidth="100.0" spacing="10.0" />
                   <HBox prefHeight="26.0" prefWidth="1200.0" spacing="10.0">
                      <children>
                         <Label text="Personal trainers">

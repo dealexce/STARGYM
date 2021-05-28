@@ -5,15 +5,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.InfoChange">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.InfoChangeController">
    <children>
       <Pane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <VBox prefHeight="400.0" prefWidth="600.0">
+            <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="115.0">
                      <children>
-                        <Button mnemonicParsing="false" text="HOME">
+                        <Button mnemonicParsing="false" onAction="#goBack" text="HOME">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -28,75 +28,79 @@
                         <Insets left="10.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
+                  <VBox maxWidth="400.0">
                      <children>
-                        <Label text="        Name：">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField alignment="CENTER" promptText="Chunxi Tang" />
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
+                           <children>
+                              <Label text="        Name：">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="name" alignment="CENTER" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
+                           <children>
+                              <Label text="            Sex：">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="sex" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
+                           <children>
+                              <Label text="      Height(cm)：" textAlignment="JUSTIFY">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="height" alignment="CENTER" promptText="185cm" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
+                           <children>
+                              <Label text="     Weight(kg)：">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="weight" alignment="CENTER" promptText="70kg" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
+                           <children>
+                              <Label text="Telephone：">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="telephone" alignment="CENTER" promptText="12345678910" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
+                           <children>
+                              <Label text="  Password：">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="password" alignment="CENTER" promptText="465464646416" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#saveChange" text="Save Changes">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
-                     <children>
-                        <Label text="            Sex：">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField alignment="CENTER" promptText="Male" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
-                     <children>
-                        <Label text="      Height：" textAlignment="JUSTIFY">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField alignment="CENTER" promptText="185cm" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
-                     <children>
-                        <Label text="     Weight：">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField alignment="CENTER" promptText="70kg" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
-                     <children>
-                        <Label text="Telephone：">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField alignment="CENTER" promptText="12345678910" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
-                     <children>
-                        <Label text="  Password：">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField alignment="CENTER" promptText="465464646416" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
-                     <children>
-                        <Button mnemonicParsing="false" text="Confirm">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
+                  </VBox>
                </children>
             </VBox>
          </children>

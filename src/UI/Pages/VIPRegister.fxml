@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.VIPRegister">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.VIPRegisterController">
     <top>
         <VBox prefHeight="66.0" prefWidth="600.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
             <children>
@@ -70,7 +70,9 @@
                                                 <VBox.margin>
                                                     <Insets top="10.0" />
                                                 </VBox.margin></Button>
-                                            <Button alignment="CENTER" contentDisplay="CENTER" text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#normalRegister"
+                                                    text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER"
+                                            fx:id="normalButton">
                                                 <font>
                                                     <Font size="16.0" />
                                                 </font>
@@ -126,7 +128,9 @@
                                                 <VBox.margin>
                                                     <Insets top="10.0" />
                                                 </VBox.margin></Button>
-                                            <Button alignment="CENTER" contentDisplay="CENTER" text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#memberRegister"
+                                                    text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER"
+                                                    fx:id="memberButton">
                                                 <font>
                                                     <Font size="16.0" />
                                                 </font>
@@ -183,7 +187,9 @@
                               <VBox.margin>
                                  <Insets top="10.0" />
                               </VBox.margin></Button>
-                                            <Button alignment="CENTER" contentDisplay="CENTER" text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#VIPRegister"
+                                                    text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER"
+                                            fx:id="vipButton">
                                                 <font>
                                                     <Font size="16.0" />
                                                 </font>

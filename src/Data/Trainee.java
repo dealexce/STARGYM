@@ -12,7 +12,7 @@ import java.util.List;
 public class Trainee extends User implements Serializable {
     private static final long serialVersionUID = 4847083491969217078L;
     // Type of members of the user (Normal, Member and VIPMember)
-    private String userType;
+    private int userType = 1;
     private List<Course> favoriteCourses = new ArrayList<>();
     private List<Trainer> favoriteTrainers = new ArrayList<>();
     private List<Exercise> myExercises = new ArrayList<>();
@@ -31,11 +31,11 @@ public class Trainee extends User implements Serializable {
 
     public Trainee(){}
 
-    public String getUserType() {
+    public int getUserType() {
         return userType;
     }
 
-    public void setUserType(String userType) {
+    public void setUserType(int userType) {
         this.userType = userType;
     }
 

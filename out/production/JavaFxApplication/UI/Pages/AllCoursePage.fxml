@@ -2,16 +2,14 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0"
-            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.AllCoursesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.AllCoursesController">
    <top>
       <VBox prefHeight="66.0" prefWidth="600.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="&lt;HOME" onAction="#goHome"/>
+            <Button mnemonicParsing="false" onAction="#goHome" text="&lt;HOME" />
             <GridPane>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,8 +26,8 @@
                   </Label>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <TextField alignment="CENTER_RIGHT" />
-                        <Button mnemonicParsing="false" text="Search" />
+                        <TextField fx:id="searchWord" alignment="CENTER_RIGHT" />
+                        <Button mnemonicParsing="false" onAction="#search" text="Search" />
                      </children>
                   </HBox>
                </children>
@@ -47,9 +45,9 @@
       </VBox>
    </top>
    <center>
-      <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="TOP_CENTER" >
+      <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="TOP_CENTER">
          <content>
-            <FlowPane columnHalignment="CENTER" hgap="20.0" prefHeight="200.0" prefWidth="200.0" vgap="20.0" fx:id="coursePane">
+            <FlowPane fx:id="coursePane" columnHalignment="CENTER" hgap="20.0" prefHeight="200.0" prefWidth="200.0" vgap="20.0">
                <children>
 
 

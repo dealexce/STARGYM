@@ -24,12 +24,6 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
-                     <children>
-                        <TextField alignment="CENTER_RIGHT" />
-                        <Button mnemonicParsing="false" text="Search" />
-                     </children>
-                  </HBox>
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.CreatCoursePage">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.CreateCourseController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -14,7 +13,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
                      <children>
-                        <Button mnemonicParsing="false" text="HOME">
+                        <Button mnemonicParsing="false" onAction="#goBack" text="Back">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -39,7 +38,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField />
+                        <TextField fx:id="title" />
                      </children>
                   </HBox>
                   <HBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="600.0">
@@ -49,7 +48,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField />
+                        <TextField fx:id="type" />
                      </children>
                   </HBox>
                   <HBox alignment="TOP_CENTER" prefHeight="138.0" prefWidth="600.0">
@@ -59,12 +58,12 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextArea prefHeight="200.0" prefWidth="200.0" />
+                        <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0">
                      <children>
-                        <Button mnemonicParsing="false" text="OK">
+                        <Button mnemonicParsing="false" onAction="#publish" text="OK">
                            <font>
                               <Font size="18.0" />
                            </font>

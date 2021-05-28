@@ -12,9 +12,9 @@ public  class User implements Serializable {
     private String userId;
     private String userName;
     private String passWord;
-    private String telephone;
-    private String sex;
-    private int height;
+    private String telephone = "";
+    private String sex = "";
+    private int height = 0;
 
 
     private int weight;

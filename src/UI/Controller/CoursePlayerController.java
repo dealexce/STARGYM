@@ -52,7 +52,7 @@ public class CoursePlayerController extends Page {
         if(course!=null){
             courseTitle.setText(course.getTitle());
             trainerName.setText(course.getTrainerId());
-            introduction.setText(course.getCourseId());
+            introduction.setText(course.getCover());
             String url = System.getProperty("user.dir")+ "\\Resources\\Player\\V1.gif";
             Image img = new Image("file:"+url);
             playerContent.setImage(img);

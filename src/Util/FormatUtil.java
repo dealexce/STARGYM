@@ -32,4 +32,9 @@ public class FormatUtil {
         Pattern pattern = Pattern.compile("^[\\w_]{6,20}$");
         return pattern.matcher(password).matches();
     }
+
+    public static boolean isInteger(String str) {
+        Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
+        return pattern.matcher(str).matches();
+    }
 }

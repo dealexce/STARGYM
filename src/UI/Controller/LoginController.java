@@ -21,7 +21,7 @@ public class LoginController extends Page {
 
     @Override
     public String getLocalPath() {
-        return Path.HOME;
+        return Path.LOGIN;
     }
 
     public void login() {
@@ -37,8 +37,7 @@ public class LoginController extends Page {
             }
         }else{
             if(this.stageManager.getDataService().loginAsTrainer(userId.getText(),password.getText())){
-                this.stageManager.closeStage(Path.LOGIN);
-                this.stageManager.openStage(Path.HOME);
+                stageManager.stageRedirect(getLocalPath(),Path.TRAINERPERSONAL);
             }else{
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Login Fail");

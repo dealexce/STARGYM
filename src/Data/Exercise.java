@@ -1,7 +1,7 @@
 package Data;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * @author Chuxing, Fang
@@ -15,7 +15,7 @@ public class Exercise implements Serializable {
     private String exerciseId;
     private String trainerId;
     private String traineeId;
-    private Date date;
+    private LocalDate date;
     // range from 0 to 12 related to 24h per day
     private int timeStamp;
     private String description;
@@ -36,11 +36,11 @@ public class Exercise implements Serializable {
         this.traineeId = traineeId;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

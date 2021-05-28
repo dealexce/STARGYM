@@ -22,7 +22,7 @@ public class RegisterController extends Page {
 
     @Override
     public String getLocalPath() {
-        return Path.HOME;
+        return Path.REGISTER;
     }
 
     public void register(ActionEvent actionEvent) {

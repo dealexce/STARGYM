@@ -211,18 +211,7 @@ public class TraineeRepository extends DataRepository {
      * @return true if success and false if fail
      */
     public boolean registerMembership(Trainee trainee, int category){
-        switch (category){
-            case 1:
-                trainee.setUserType("Normal");
-                return add(trainee);
-            case 2:
-                trainee.setUserType("Member");
-                return add(trainee);
-            case 3:
-                trainee.setUserType("VIPMember");
-                return add(trainee);
-            default:
-                return false;
-        }
+        trainee.setUserType(category);
+        return add(trainee);
     }
 }

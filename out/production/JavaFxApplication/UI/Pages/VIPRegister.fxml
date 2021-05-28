@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.VIPRegisterController">
+    <top>
+        <VBox prefHeight="66.0" prefWidth="600.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" onAction="#goHome" text="&lt;HOME" />
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="VIP Register">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </GridPane>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </top>
+    <center>
+                <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+                    <content>
+                        <HBox alignment="CENTER" fillHeight="false" spacing="80.0" style="-fx-background-color: white;">
+
+                            <children>
+                                <BorderPane prefHeight="100.0" prefWidth="600.0" style="-fx-border-color: lightgrey; -fx-background-color: FCFCFC;">
+                                    <top>
+                                        <Label alignment="CENTER" text="Normal" textAlignment="CENTER" BorderPane.alignment="CENTER">Normal
+                                            <font>
+                                                <Font name="Arial Bold Italic" size="32.0" />
+                                            </font>
+                                            <BorderPane.margin>
+                                                <Insets />
+                                            </BorderPane.margin></Label>
+                                    </top>
+                                    <bottom>
+                                        <VBox alignment="CENTER">
+                                            <Button fx:id="ViewNormal" alignment="CENTER" contentDisplay="CENTER" onAction="#ViewNormal_Event" text="View" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                <font>
+                                                    <Font size="16.0" />
+                                                </font>
+                                                <BorderPane.margin>
+                                                    <Insets bottom="10.0" top="10.0" />
+                                                </BorderPane.margin>
+                                                <VBox.margin>
+                                                    <Insets top="10.0" />
+                                                </VBox.margin></Button>
+                                            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#normalRegister"
+                                                    text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER"
+                                            fx:id="normalButton">
+                                                <font>
+                                                    <Font size="16.0" />
+                                                </font>
+                                                <BorderPane.margin>
+                                                    <Insets bottom="10.0" top="10.0" />
+                                                </BorderPane.margin>
+                                                <VBox.margin>
+                                                    <Insets bottom="10.0" top="10.0" />
+                                                </VBox.margin></Button>
+                                        </VBox>
+                                    </bottom>
+                                    <effect>
+                                        <DropShadow>
+                                            <color>
+                                                <Color opacity="0.13605445623397827" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                    <center>
+                                        <ImageView fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                            <image>
+                                                <Image url="@../../../Resources/VIP/Normal.jpg" />
+                                            </image>
+                                            <BorderPane.margin>
+                                                <Insets top="10.0" />
+                                            </BorderPane.margin>
+                                        </ImageView>
+                                    </center>
+                                </BorderPane>
+                            </children>
+
+
+                            <children>
+                                <BorderPane prefHeight="100.0" prefWidth="600.0" style="-fx-border-color: lightgrey; -fx-background-color: FCFCFC;">
+                                    <top>
+                                        <Label alignment="CENTER" text="Member" textAlignment="CENTER" BorderPane.alignment="CENTER">Member
+                                            <font>
+                                                <Font name="Arial Bold Italic" size="32.0" />
+                                            </font>
+                                            <BorderPane.margin>
+                                                <Insets />
+                                            </BorderPane.margin></Label>
+                                    </top>
+                                    <bottom>
+                                        <VBox alignment="CENTER">
+                                            <Button fx:id="ViewMember" alignment="CENTER" contentDisplay="CENTER" onAction="#ViewMember_Event" text="View" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                <font>
+                                                    <Font size="16.0" />
+                                                </font>
+                                                <BorderPane.margin>
+                                                    <Insets bottom="10.0" top="10.0" />
+                                                </BorderPane.margin>
+                                                <VBox.margin>
+                                                    <Insets top="10.0" />
+                                                </VBox.margin></Button>
+                                            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#memberRegister"
+                                                    text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER"
+                                                    fx:id="memberButton">
+                                                <font>
+                                                    <Font size="16.0" />
+                                                </font>
+                                                <BorderPane.margin>
+                                                    <Insets bottom="10.0" top="10.0" />
+                                                </BorderPane.margin>
+                                                <VBox.margin>
+                                                    <Insets bottom="10.0" top="10.0" />
+                                                </VBox.margin></Button>
+                                        </VBox>
+                                    </bottom>
+
+                                    <effect>
+                                        <DropShadow>
+                                            <color>
+                                                <Color opacity="0.13605445623397827" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                    <center>
+                                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                            <image>
+                                                <Image url="@../../../Resources/VIP/Member.jpg" />
+                                            </image>
+                                            <BorderPane.margin>
+                                                <Insets top="10.0" />
+                                            </BorderPane.margin>
+                                        </ImageView>
+                                    </center>
+
+                                </BorderPane>
+                            </children>
+
+                            <children>
+                                <BorderPane prefHeight="100.0" prefWidth="600.0" style="-fx-border-color: lightgrey; -fx-background-color: FCFCFC;">
+                                    <top>
+                                        <Label alignment="CENTER" text="VIP Member" textAlignment="CENTER" BorderPane.alignment="CENTER">VIP Member
+                                            <font>
+                                                <Font name="Arial Bold Italic" size="32.0" />
+                                            </font>
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin></Label>
+                                    </top>
+                                    <bottom>
+                                        <VBox alignment="CENTER">
+                                            <Button fx:id="ViewVIP" alignment="CENTER" contentDisplay="CENTER" onAction="#ViewVIP_Event" text="View" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                <font>
+                                                    <Font size="16.0" />
+                                                </font>
+                                                <BorderPane.margin>
+                                                    <Insets bottom="10.0" top="10.0" />
+                                                </BorderPane.margin>
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin></Button>
+                                            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#VIPRegister"
+                                                    text="Register" textAlignment="CENTER" BorderPane.alignment="CENTER"
+                                            fx:id="vipButton">
+                                                <font>
+                                                    <Font size="16.0" />
+                                                </font>
+                                                <BorderPane.margin>
+                                                    <Insets bottom="10.0" top="10.0" />
+                                                </BorderPane.margin>
+                              <VBox.margin>
+                                 <Insets bottom="10.0" top="10.0" />
+                              </VBox.margin></Button>
+                                        </VBox>
+                                    </bottom>
+                                    <effect>
+                                        <DropShadow>
+                                            <color>
+                                                <Color opacity="0.13605445623397827" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                     <center>
+                                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                            <image>
+                                                <Image url="@../../../Resources/VIP/VIP.jpg" />
+                                            </image>
+                           <BorderPane.margin>
+                              <Insets top="10.0" />
+                           </BorderPane.margin>
+                                        </ImageView>
+                     </center>
+
+                                </BorderPane>
+                            </children>
+
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+                        </HBox>
+                    </content>
+                </ScrollPane>
+    </center>
+</BorderPane>

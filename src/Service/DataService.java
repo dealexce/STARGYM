@@ -7,6 +7,7 @@ import Repository.TraineeRepository;
 import Repository.TrainerRepository;
 import sun.rmi.runtime.NewThreadAction;
 
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -185,6 +186,15 @@ public class DataService {
         refresh();
         return result;
     }
+    public boolean trainerCreateCourse(String title, String type, String description){
+        Course course = new Course();
+        course.setTitle(title);
+        course.setType(type);
+        course.setCover(description);
+        boolean result = trainerRepository.createCourse(trainer, course);
+        refresh();
+        return result;
+    }
 
     /**
      * A trainee create a new exercise
@@ -194,7 +204,7 @@ public class DataService {
      * @param description the detail information
      * @return true if success and false if fail
      */
-    public boolean traineeCreateExercise(String TrainerId, Date date, int timestamp, String description){
+    public boolean traineeCreateExercise(String TrainerId, LocalDate date, int timestamp, String description){
         Exercise exercise = new Exercise();
         exercise.setTraineeId(trainee.getUserId());
         exercise.setDate(date);

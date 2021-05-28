@@ -4,16 +4,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller.TrainerPersonalPageController">
    <content>
       <VBox alignment="TOP_CENTER">
          <children>
             <VBox prefHeight="207.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: skyblue;">
                <children>
-                  <Button mnemonicParsing="false" text="&lt;HOME" />
+                  <Button mnemonicParsing="false" onAction="#goHome" text="&lt;HOME" />
                   <GridPane maxHeight="140.0" minHeight="140.0" prefHeight="140.0" VBox.vgrow="NEVER">
                      <columnConstraints>
                         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
@@ -26,22 +25,22 @@
                      <children>
                         <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../res/Trainer/T1.png" />
+                              <Image url="@../../../Resources/Trainers/T1.png" />
                            </image>
                         </ImageView>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1">
                            <children>
                               <HBox alignment="BASELINE_LEFT" prefHeight="52.0" prefWidth="510.0" spacing="10.0">
                                  <children>
-                                    <Label text="Jakie Tang">
+                                    <Label fx:id="name" text="Jakie Tang">
                                        <font>
                                           <Font size="36.0" />
                                        </font>
                                     </Label>
-                                    <Button mnemonicParsing="false" text="Premium VIP" />
+                                    <Button mnemonicParsing="false" onMouseClicked="#viewPremium" text="Premium VIP" />
                                  </children>
                               </HBox>
-                              <Label text="56 kg | Male | BMI: 23.0" />
+                              <Label fx:id="basic" text="56 kg | Male | BMI: 23.0" />
                               <Button mnemonicParsing="false" text="Edit portfolio" />
                            </children>
                         </VBox>
@@ -49,12 +48,12 @@
                            <children>
                               <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                                  <children>
-                                    <Label text="Favorate">
+                                    <Label text="Courses">
                                        <font>
-                                          <Font size="24.0" />
+                                          <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="16" textAlignment="CENTER">
+                                    <Label fx:id="courseNum" text="16" textAlignment="CENTER">
                                        <font>
                                           <Font size="30.0" />
                                        </font>
@@ -63,12 +62,12 @@
                               </VBox>
                               <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                                  <children>
-                                    <Label text="Courses">
+                                    <Label text="Exercises">
                                        <font>
-                                          <Font size="24.0" />
+                                          <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label text="3">
+                                    <Label fx:id="exerciseNum" text="3">
                                        <font>
                                           <Font size="30.0" />
                                        </font>
@@ -94,80 +93,33 @@
                <children>
                   <HBox prefHeight="26.0" prefWidth="1200.0" spacing="10.0">
                      <children>
-                        <Label text="My Schedule">
+                        <Label text="My Courses">
                            <font>
-                              <Font size="24.0" />
+                              <Font size="20.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" text="add new" />
+                        <Button mnemonicParsing="false" onAction="#goMyCourse" text="view all" />
+                        <Button layoutX="132.0" layoutY="10.0" mnemonicParsing="false" onAction="#publish" text="publish new course" />
                      </children>
                   </HBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                  <HBox fx:id="courseHBox" prefHeight="100.0" prefWidth="200.0" spacing="60.0">
+                     <padding>
+                        <Insets left="40.0" right="40.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="1200.0" spacing="10.0">
                      <children>
-                        <GridPane minHeight="70.0" style="-fx-border-color: black; -fx-background-color: whitesmoke;">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0">
-                                 <children>
-                                    <Label text="Exercise name">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Line endX="100.0" startX="-100.0" />
-                                    <Label text="Time: 00:00 - 23:59" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefWidth="70.0" text="Edit" />
-                                    <Button mnemonicParsing="false" prefWidth="70.0" text="Detail" />
-                                 </children>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="20.0" right="50.0" top="5.0" />
-                           </padding>
-                        </GridPane>
-                        <GridPane minHeight="70.0" style="-fx-border-color: black; -fx-background-color: whitesmoke;">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0">
-                                 <children>
-                                    <Label text="Exercise name">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Line endX="100.0" startX="-100.0" />
-                                    <Label text="Time: 00:00 - 23:59" />
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefWidth="70.0" text="Attend" />
-                                    <Button mnemonicParsing="false" prefWidth="70.0" text="Detail" />
-                                 </children>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="20.0" right="50.0" top="5.0" />
-                           </padding>
-                        </GridPane>
+                        <Label text="My Exercices">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
                      </children>
-                  </VBox>
+                  </HBox>
+                  <VBox fx:id="exerciseVBox" prefHeight="200.0" prefWidth="100.0" spacing="10.0" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />

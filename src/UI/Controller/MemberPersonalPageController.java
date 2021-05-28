@@ -43,7 +43,7 @@ public class MemberPersonalPageController extends Page {
     private FlowPane trainerFlowPane;
     @FXML
     public void viewPremium(MouseEvent mouseEvent) {
-        this.stageManager.openStage(Path.PREMIUM);
+        this.stageManager.openStage(Path.VIPREGISTER);
     }
 
     @Override
@@ -58,6 +58,7 @@ public class MemberPersonalPageController extends Page {
         genFavoriteCourses();
         genExercises();
         genFavoriteTrainers();
+        stageManager.openStage(Path.LIVESESSION);
     }
 
     private void genBasicInfo(){
@@ -141,6 +142,7 @@ public class MemberPersonalPageController extends Page {
             vb2.setMinSize(200,70);
             vb2.setSpacing(5);
             Button btn = new Button("Attend");
+            btn.setOnMouseClicked(e->stageManager.openStage(Path.LIVESESSION));
             Button btn2 = new Button("Cancel");
             vb2.getChildren().addAll(btn,btn2);
             vb2.setAlignment(Pos.CENTER_RIGHT);
@@ -201,5 +203,10 @@ public class MemberPersonalPageController extends Page {
 
     public void goFavoriteCourse(){
         this.stageManager.stageRedirect(this.getLocalPath(),Path.FAVORITECOURSE);
+    }
+
+    @FXML
+    void goInfoChange(){
+        this.stageManager.openStage(Path.INFOCHANGE);
     }
 }
