@@ -227,6 +227,22 @@ public class DataService {
         return result;
     }
 
+    public Trainee findTrainee(String traineeId){
+        return traineeRepository.getById(traineeId);
+    }
+
+    public Trainer findTrainer(String trainerId){
+        return trainerRepository.getById(trainerId);
+    }
+
+    public Course findCourse(String courseId){
+        return courseRepository.getById(courseId);
+    }
+
+    public Exercise findExercise(String exerciseId){
+        return exerciseRepository.getById(exerciseId);
+    }
+
     /**
      * refresh the user information from the data file
      */
