@@ -38,4 +38,9 @@ class TraineeRepositoryTest {
     void login() {
         assertTrue(repository.login("Te10001","star123"));
     }
+
+    @Test
+    void register(){
+        assertEquals(repository.register("David","12345678").getUserName(), "David");
+    }
 }
