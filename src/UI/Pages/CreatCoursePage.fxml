@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.CreatCoursePage">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <VBox layoutX="2.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="HOME">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Label text="Create Course">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="48.0" prefWidth="600.0">
+                     <children>
+                        <Label text="Course Title：    ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="600.0">
+                     <children>
+                        <Label text="Course Type：   ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="138.0" prefWidth="600.0">
+                     <children>
+                        <Label text="Course Description：">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="OK">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
