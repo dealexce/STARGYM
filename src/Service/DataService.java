@@ -5,6 +5,7 @@ import Repository.CourseRepository;
 import Repository.ExerciseRepository;
 import Repository.TraineeRepository;
 import Repository.TrainerRepository;
+import sun.rmi.runtime.NewThreadAction;
 
 import java.util.*;
 
@@ -241,6 +242,36 @@ public class DataService {
 
     public Exercise findExercise(String exerciseId){
         return exerciseRepository.getById(exerciseId);
+    }
+
+    /**
+     * Trainee change the personal info
+     * @param newTrainee the changed trainee object
+     * @return true if success and false if fail
+     */
+    public boolean traineeChangeInfo(Trainee newTrainee){
+        if(!trainee.getUserId().equals(newTrainee.getUserId())){
+            return false;
+        }else{
+            boolean result = traineeRepository.add(newTrainee);
+            refresh();
+            return true;
+        }
+    }
+
+    /**
+     * Trainer change the personal info
+     * @param newTrainer the changed trainer object
+     * @return true if success and false if fail
+     */
+    public boolean trainerChangeInfo(Trainer newTrainer){
+        if(!trainer.getUserId().equals(newTrainer.getUserId())){
+            return false;
+        }else{
+            boolean result = trainerRepository.add(newTrainer);
+            refresh();
+            return true;
+        }
     }
 
     /**

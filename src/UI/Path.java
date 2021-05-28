@@ -16,4 +16,5 @@ public static final String PREMIUM = "Pages/PremiumPlanPage.fxml";
 public static final String MEMBERPERSONAL = "Pages/MemberPersonalPage.fxml";
 public static final String FAVORITECOURSE = "Pages/FavoriteCoursePage.fxml";
 public static final String COURSEPLAYER = "Pages/CoursePlayer.fxml";
+public static final String INFOCHANGE = "Pages/InfoChange.fxml";
 }
