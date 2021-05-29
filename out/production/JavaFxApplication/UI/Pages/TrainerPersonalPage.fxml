@@ -37,11 +37,10 @@
                                           <Font size="36.0" />
                                        </font>
                                     </Label>
-                                    <Button mnemonicParsing="false" onMouseClicked="#viewPremium" text="Premium VIP" />
                                  </children>
                               </HBox>
                               <Label fx:id="basic" text="56 kg | Male | BMI: 23.0" />
-                              <Button mnemonicParsing="false" text="Edit portfolio" />
+                              <Button mnemonicParsing="false" text="Edit portfolio" onAction="#goChangeInfo" />
                            </children>
                         </VBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="2">

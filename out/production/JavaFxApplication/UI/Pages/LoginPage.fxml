@@ -52,7 +52,7 @@
             </VBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
                <children>
-                  <RadioButton fx:id="member" mnemonicParsing="false" selected="true" text="Member">
+                  <RadioButton fx:id="member" mnemonicParsing="false" selected="true" text="Trainee">
                      <toggleGroup>
                         <ToggleGroup fx:id="role" />
                      </toggleGroup></RadioButton>

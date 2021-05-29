@@ -19,10 +19,24 @@ public class LiveSessionController extends Page {
         super(stageManager);
     }
 
+    @FXML
+    private ImageView trainer, trainee, connect;
+
     @Override
     public String getLocalPath() {
         return Path.LIVESESSION;
     }
 
-
+    @Override
+    public void init() {
+        String trainerURL = System.getProperty("user.dir")+ "\\Resources\\Trainers\\T1.png";
+        String connectURL = System.getProperty("user.dir")+ "\\Resources\\Contact\\connect.gif";
+        String traineeURL = System.getProperty("user.dir")+ "\\Resources\\Trainee\\OIP.jpg";
+        Image trainerImg = new Image("file:"+trainerURL);
+        Image connectImg = new Image("file:"+connectURL);
+        Image traineeImg = new Image("file:"+traineeURL);
+        trainer.setImage(trainerImg);
+        connect.setImage(connectImg);
+        trainee.setImage(traineeImg);
+    }
 }

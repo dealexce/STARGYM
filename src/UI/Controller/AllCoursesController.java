@@ -52,17 +52,21 @@ public class AllCoursesController extends Page {
             gp.setPrefSize(240,170);
             gp.setMinSize(240,170);
             gp.setStyle("-fx-background-color: white");
-            String url = System.getProperty("user.dir")+ "\\Resources\\Course\\C1.png";
+            String url = System.getProperty("user.dir")+ "\\Resources\\Course\\"+course.getCover()+".jpg";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(120);
             imgv.setFitWidth(240);
             imgv.setPreserveRatio(false);
             imgv.setPickOnBounds(true);
-            gp.add(imgv,0,0);
+            VBox imgVB = new VBox();
+            imgVB.setMinSize(240,120);
+            imgVB.setPrefSize(240,120);
+            imgVB.getChildren().add(imgv);
+            gp.add(imgVB,0,0);
 
             VBox vb = new VBox();
-            vb.setPrefSize(240,200);
+            vb.setPrefSize(240,15);
             Label lbl = new Label(course.getTitle());
             lbl.setFont(Font.font(18));
 

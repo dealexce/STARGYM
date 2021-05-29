@@ -190,7 +190,10 @@ public class DataService {
         Course course = new Course();
         course.setTitle(title);
         course.setType(type);
-        course.setCover(description);
+        course.setDescription(description);
+        Random r = new Random();
+        String cover = "C" + r.nextInt(4);
+        course.setCover(cover);
         boolean result = trainerRepository.createCourse(trainer, course);
         refresh();
         return result;

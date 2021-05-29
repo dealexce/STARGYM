@@ -72,16 +72,21 @@ public class DataRepository {
      * Get next id according to existing ids
      * @return The next id
      */
-    public String getNextId(){
+    public String getNextId(String type){
         File file  = new File(this.getFilePath());
         File[] array = file.listFiles();
         String lastFileName;
-        lastFileName = array[array.length-1].getName();
-        String[] temp = lastFileName.split("\\.");
         StringBuilder sb = new StringBuilder();
-        int number = Integer.parseInt(temp[0].substring(2)) + 1;
-        sb.append(temp[0].substring(0,2));
-        sb.append(number);
+        if(array.length == 0){
+            sb.append(type);
+            sb.append("10000");
+        }else{
+            lastFileName = array[array.length-1].getName();
+            String[] temp = lastFileName.split("\\.");
+            int number = Integer.parseInt(temp[0].substring(2)) + 1;
+            sb.append(temp[0].substring(0,2));
+            sb.append(number);
+        }
         return sb.toString();
     }
 }

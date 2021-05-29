@@ -19,7 +19,7 @@ class CourseRepositoryTest {
         course = new Course();
         course.setCourseId("C10001");
         course.setTitle("CourseA");
-        course.setVideo("VideoA");
+        course.setDescription("VideoA");
         course.setCover("CoverA");
         course.setType("TypeA");
         repository = new CourseRepository();
@@ -34,7 +34,7 @@ class CourseRepositoryTest {
     void getById() {
         Course resultCourse = repository.getById("C10001");
         assertEquals(resultCourse.getTitle(),"CourseA");
-        assertEquals(resultCourse.getVideo(),"VideoA");
+        assertEquals(resultCourse.getDescription(),"VideoA");
         assertEquals(resultCourse.getCover(),"CoverA");
         assertEquals(resultCourse.getType(),"TypeA");
     }

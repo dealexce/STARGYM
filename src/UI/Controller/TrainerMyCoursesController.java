@@ -40,7 +40,7 @@ public class TrainerMyCoursesController extends Page {
             gp.setPrefSize(240,170);
             gp.setMinSize(240,170);
             gp.setStyle("-fx-background-color: white");
-            String url = System.getProperty("user.dir")+ "\\Resources\\Course\\C1.png";
+            String url = System.getProperty("user.dir")+ "\\Resources\\Course\\"+course.getCover()+".jpg";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(120);

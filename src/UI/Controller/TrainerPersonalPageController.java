@@ -73,12 +73,7 @@ public class TrainerPersonalPageController extends Page {
             vb.setPrefSize(150,150);
             vb.setMinSize(150,150);
             Image img;
-            if(course.getCover()==null){
-                img = new Image("file:"+System.getProperty("user.dir")+ "\\Resources\\Courses\\C1.png");
-            }else{
-                img = new Image("file:"+course.getCover());
-            }
-
+            img = new Image("file:"+System.getProperty("user.dir")+ "\\Resources\\Courses\\"+course.getCover()+".jpg");
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(100);
             imgv.setFitWidth(150);
@@ -130,8 +125,8 @@ public class TrainerPersonalPageController extends Page {
             vb2.setMinSize(200,70);
             vb2.setSpacing(5);
             Button btn = new Button("Attend");
-            Button btn2 = new Button("Cancel");
-            vb2.getChildren().addAll(btn,btn2);
+            btn.setOnMouseClicked(e->stageManager.openStage(Path.LIVESESSION));
+            vb2.getChildren().addAll(btn);
             vb2.setAlignment(Pos.CENTER_RIGHT);
 
             gp.add(vb,0,0);
@@ -148,6 +143,10 @@ public class TrainerPersonalPageController extends Page {
 
     public void goMyCourse(){
         this.stageManager.stageRedirect(this.getLocalPath(),Path.TRAINERMYCOURSE);
+    }
+
+    public void goChangeInfo(){
+        this.stageManager.stageRedirect(this.getLocalPath(),Path.INFOCHANGE);
     }
 
     public void publish(){

@@ -13,8 +13,7 @@ public class Course implements Serializable {
     private String trainerId;
     private String title;
     private String type;
-    // The file path of the video
-    private String video;
+    private String description;
     // The file path of the cover image
     private String cover;
 
@@ -34,12 +33,12 @@ public class Course implements Serializable {
         this.title = title;
     }
 
-    public String getVideo() {
-        return video;
+    public String getDescription() {
+        return description;
     }
 
-    public void setVideo(String video) {
-        this.video = video;
+    public void setDescription(String video) {
+        this.description = video;
     }
 
     public String getCover() {

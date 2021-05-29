@@ -12,6 +12,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author Chuxing, Fang
@@ -67,9 +68,11 @@ public class TrainerRepository extends DataRepository {
      */
     public Trainer register(String username, String password) {
         Trainer trainer = new Trainer();
-        trainer.setUserId(getNextId());
+        trainer.setUserId(getNextId("TR"));
         trainer.setUserName(username);
         trainer.setPassWord(password);
+        Random random = new Random();
+        trainer.setLevel(random.nextInt(2)+1);
         add(trainer);
         return trainer;
     }
@@ -135,7 +138,7 @@ public class TrainerRepository extends DataRepository {
         if (course == null) {
             return false;
         } else {
-            course.setCourseId(courseRepository.getNextId());
+            course.setCourseId(courseRepository.getNextId("CR"));
             course.setTrainerId(trainer.getUserId());
             courseRepository.add(course);
             temp.add(course);

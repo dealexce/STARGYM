@@ -10,7 +10,6 @@ import UI.StageManager;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -85,7 +84,7 @@ public class MemberPersonalPageController extends Page {
             vb.setMinSize(150,150);
             Image img;
             if(course.getCover()==null){
-                img = new Image("file:"+System.getProperty("user.dir")+ "\\Resources\\Courses\\C1.png");
+                img = new Image("file:"+System.getProperty("user.dir")+ "\\Resources\\Courses\\"+course.getCover()+".jpg");
             }else{
                 img = new Image("file:"+course.getCover());
             }
@@ -143,6 +142,7 @@ public class MemberPersonalPageController extends Page {
             Button btn = new Button("Attend");
             btn.setOnMouseClicked(e->stageManager.openStage(Path.LIVESESSION));
             Button btn2 = new Button("Cancel");
+            btn2.setOnMouseClicked(e->stageManager.getDataService().traineeCancelExercise(exercise.getExerciseId()));
             vb2.getChildren().addAll(btn,btn2);
             vb2.setAlignment(Pos.CENTER_RIGHT);
 

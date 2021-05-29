@@ -1,6 +1,7 @@
 package UI.Controller;
 
 import Data.Trainee;
+import Data.Trainer;
 import UI.Page;
 import UI.Path;
 import Util.FormatUtil;
@@ -22,6 +23,7 @@ public class InfoChangeController extends Page {
     private ComboBox<String> sex;
 
     private Trainee trainee;
+    private Trainer trainer;
 
     @Override
     public String getLocalPath() {
@@ -30,15 +32,25 @@ public class InfoChangeController extends Page {
 
     @Override
     public void init() {
-        trainee = stageManager.getDataService().getTrainee();
-        sex.getItems().addAll("Male","Female","Other");
-        sex.getSelectionModel().select(trainee.getSex());
+        if(stageManager.getDataService().getTrainee() != null){
+            trainee = stageManager.getDataService().getTrainee();
+            generateInit(trainee.getSex(), trainee.getUserName(), trainee.getHeight(), trainee.getWeight(), trainee.getTelephone(), trainee.getPassWord());
+        }else if(stageManager.getDataService().getTrainer() != null){
+            trainer = stageManager.getDataService().getTrainer();
+            generateInit(trainer.getSex(), trainer.getUserName(), trainer.getHeight(), trainer.getWeight(), trainer.getTelephone(), trainer.getPassWord());
+        }
 
-        name.setText(trainee.getUserName());
-        height.setText(String.valueOf(trainee.getHeight()));
-        weight.setText(String.valueOf(trainee.getWeight()));
-        telephone.setText(trainee.getTelephone());
-        password.setText(trainee.getPassWord());
+    }
+
+    private void generateInit(String sex, String userName, int height, int weight, String telephone, String passWord) {
+        this.sex.getItems().addAll("Male","Female","Other");
+        this.sex.getSelectionModel().select(sex);
+
+        name.setText(userName);
+        this.height.setText(String.valueOf(height));
+        this.weight.setText(String.valueOf(weight));
+        this.telephone.setText(telephone);
+        password.setText(passWord);
     }
 
 
@@ -49,14 +61,26 @@ public class InfoChangeController extends Page {
             notice("Please check",checkString, Alert.AlertType.INFORMATION);
             return;
         }
-        trainee.setUserName(name.getText());
-        trainee.setSex(sex.getValue());
-        trainee.setHeight(Integer.parseInt(height.getText()));
-        trainee.setWeight(Integer.parseInt(weight.getText()));
-        trainee.setTelephone(telephone.getText());
-        trainee.setPassWord(password.getText());
-        stageManager.getDataService().traineeChangeInfo(trainee);
-        this.stageManager.stageRedirect(getLocalPath(),Path.MEMBERPERSONAL);
+        if(stageManager.getDataService().getTrainee() != null){
+            trainee.setUserName(name.getText());
+            trainee.setSex(sex.getValue());
+            trainee.setHeight(Integer.parseInt(height.getText()));
+            trainee.setWeight(Integer.parseInt(weight.getText()));
+            trainee.setTelephone(telephone.getText());
+            trainee.setPassWord(password.getText());
+            stageManager.getDataService().traineeChangeInfo(trainee);
+            this.stageManager.stageRedirect(getLocalPath(),Path.MEMBERPERSONAL);
+        }else if(stageManager.getDataService().getTrainer() != null){
+            trainer.setUserName(name.getText());
+            trainer.setSex(sex.getValue());
+            trainer.setHeight(Integer.parseInt(height.getText()));
+            trainer.setWeight(Integer.parseInt(weight.getText()));
+            trainer.setTelephone(telephone.getText());
+            trainer.setPassWord(password.getText());
+            stageManager.getDataService().trainerChangeInfo(trainer);
+            this.stageManager.stageRedirect(getLocalPath(),Path.TRAINERPERSONAL);
+        }
+
     }
 
     private String infoCheck(){

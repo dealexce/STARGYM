@@ -5,6 +5,7 @@ import Data.Exercise;
 import Data.Trainee;
 import Data.Trainer;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -62,7 +63,7 @@ public class TraineeRepository extends DataRepository {
      */
     public Trainee register(String username, String password) {
         Trainee trainee = new Trainee();
-        trainee.setUserId(getNextId());
+        trainee.setUserId(getNextId("TE"));
         trainee.setUserName(username);
         trainee.setPassWord(password);
         add(trainee);
@@ -169,7 +170,7 @@ public class TraineeRepository extends DataRepository {
         // initialize the exercise object
         exercise.setTraineeId(trainee.getUserId());
         ExerciseRepository exerciseRepository = new ExerciseRepository();
-        exercise.setExerciseId(exerciseRepository.getNextId());
+        exercise.setExerciseId(exerciseRepository.getNextId("EX"));
         exerciseRepository.add(exercise);
         // add the exercise to the corresponding trainer
         TrainerRepository trainerRepository = new TrainerRepository();
@@ -179,6 +180,12 @@ public class TraineeRepository extends DataRepository {
             return false;
         }
         // add the exercise to the corresponding trainee
+        List<Exercise> temp = new ArrayList<>();
+        if(trainee.getMyExercises() != null){
+            temp = trainee.getMyExercises();
+        }
+        temp.add(exercise);
+        trainee.setMyExercises(temp);
         return add(trainee);
     }
 
@@ -190,11 +197,12 @@ public class TraineeRepository extends DataRepository {
      */
     public boolean cancelExercise(Trainee trainee, String exerciseId){
         ExerciseRepository exerciseRepository = new ExerciseRepository();
-        List<Exercise> exercises = exerciseRepository.getALL();
-        Iterator<Exercise> iter = exercises.iterator();
-        while (iter.hasNext()) {
-            Exercise elem = iter.next();
+        TrainerRepository trainerRepository = new TrainerRepository();
+        List<Exercise> exercises = trainee.getMyExercises();
+        for (Exercise elem : exercises) {
             if (elem.getExerciseId().equals(exerciseId)) {
+                Trainer trainer = trainerRepository.getById(elem.getTrainerId());
+                trainerRepository.deleteExercise(trainer, elem.getExerciseId());
                 exercises.remove(elem);
                 trainee.setMyExercises(exercises);
                 return add(trainee);

@@ -38,12 +38,10 @@
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="150.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Resources/Trainers/T1.png" />
-                                 </image>
+                              <ImageView fitHeight="150.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true" fx:id="trainer">
+
                               </ImageView>
-                              <Label text="Chunxi Tang">
+                              <Label text="Let us do this">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -52,10 +50,8 @@
                         </VBox>
                         <VBox alignment="TOP_CENTER" prefHeight="303.0" prefWidth="76.0">
                            <children>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Resources/Contact/2.gif" />
-                                 </image>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" fx:id="connect">
+
                                  <VBox.margin>
                                     <Insets top="50.0" />
                                  </VBox.margin>
@@ -69,12 +65,10 @@
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Resources/Trainee/OIP.jpg" />
-                                 </image>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" fx:id="trainee">
+
                               </ImageView>
-                              <Label text="Will Smith">
+                              <Label text="I am trying">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

@@ -46,6 +46,8 @@ public class HomeController extends Page {
             Button my_info_btn = new Button("my info");
             if(this.stageManager.getDataService().getTrainee()!=null){
                 my_info_btn.setOnMouseClicked(e->goMyInfo());
+            }else if(this.stageManager.getDataService().getTrainer()!=null){
+                my_info_btn.setOnMouseClicked(e->goTrainerInfo());
             }
             loginInfo.getChildren().addAll(book_btn,my_info_btn);
         }else{
@@ -66,7 +68,7 @@ public class HomeController extends Page {
             vb.setMinSize(150,130);
             vb.setPrefSize(150,130);
 
-            String url = System.getProperty("user.dir")+ "\\Resources\\Courses\\C1.png";
+            String url = System.getProperty("user.dir")+ "\\Resources\\Courses\\"+course.getCover()+".jpg";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(100);
@@ -123,6 +125,8 @@ public class HomeController extends Page {
     private void goMyInfo() {
         this.stageManager.stageRedirect(getLocalPath(),Path.MEMBERPERSONAL);
     }
+
+    private void goTrainerInfo(){this.stageManager.stageRedirect(getLocalPath(), Path.TRAINERPERSONAL);}
 
     private void goLogin(){
         this.stageManager.stageRedirect(getLocalPath(),Path.LOGIN);

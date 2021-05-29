@@ -6,6 +6,8 @@ import UI.Path;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.lang.reflect.Member;
 
@@ -17,6 +19,8 @@ public class VIPRegisterController extends Page {
     }
     @FXML
     private Button ViewNormal, ViewMember, ViewVip, normalButton, memberButton, vipButton;
+    @FXML
+    private ImageView normal, member, vip;
 
     @Override
     public void init() {
@@ -42,6 +46,15 @@ public class VIPRegisterController extends Page {
             vipButton.setText("Current");
             vipButton.setDisable(true);
         }
+        String normalURL = System.getProperty("user.dir")+ "\\Resources\\VIP\\Normal.jpg";
+        String memberURL = System.getProperty("user.dir")+ "\\Resources\\VIP\\Member.jpg";
+        String vipURL = System.getProperty("user.dir")+ "\\Resources\\VIP\\VIP.jpg";
+        Image normalImg = new Image("file:"+normalURL);
+        Image memberImg = new Image("file:"+memberURL);
+        Image vipImg = new Image("file:"+vipURL);
+        normal.setImage(normalImg);
+        member.setImage(memberImg);
+        vip.setImage(vipImg);
     }
 
     @FXML
