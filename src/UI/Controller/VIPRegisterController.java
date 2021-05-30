@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.File;
 import java.lang.reflect.Member;
 
 public class VIPRegisterController extends Page {
@@ -46,9 +47,9 @@ public class VIPRegisterController extends Page {
             vipButton.setText("Current");
             vipButton.setDisable(true);
         }
-        String normalURL = System.getProperty("user.dir")+ "\\Resources\\VIP\\Normal.jpg";
-        String memberURL = System.getProperty("user.dir")+ "\\Resources\\VIP\\Member.jpg";
-        String vipURL = System.getProperty("user.dir")+ "\\Resources\\VIP\\VIP.jpg";
+        String normalURL = Path.RESOURCE+"VIP"+ File.separator+"Normal.jpg";
+        String memberURL = Path.RESOURCE+"VIP"+ File.separator+"Member.jpg";
+        String vipURL = Path.RESOURCE+"VIP"+ File.separator+"VIP.jpg";
         Image normalImg = new Image("file:"+normalURL);
         Image memberImg = new Image("file:"+memberURL);
         Image vipImg = new Image("file:"+vipURL);

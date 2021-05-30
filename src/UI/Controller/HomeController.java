@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -42,21 +43,19 @@ public class HomeController extends Page {
 
     private void genLoginInfo(){
         if(this.stageManager.getDataService().isLogin()){
-            Button book_btn = new Button("gym booking");
             Button my_info_btn = new Button("my info");
             if(this.stageManager.getDataService().getTrainee()!=null){
                 my_info_btn.setOnMouseClicked(e->goMyInfo());
             }else if(this.stageManager.getDataService().getTrainer()!=null){
                 my_info_btn.setOnMouseClicked(e->goTrainerInfo());
             }
-            loginInfo.getChildren().addAll(book_btn,my_info_btn);
+            loginInfo.getChildren().addAll(my_info_btn);
         }else{
-            Button book_btn = new Button("gym booking");
             Button login_btn = new Button("login");
             login_btn.setOnMouseClicked(e->goLogin());
             Button register_btn = new Button("register");
             register_btn.setOnMouseClicked(e->goRegister());
-            loginInfo.getChildren().addAll(book_btn,login_btn,register_btn);
+            loginInfo.getChildren().addAll(login_btn,register_btn);
         }
     }
 
@@ -68,7 +67,7 @@ public class HomeController extends Page {
             vb.setMinSize(150,130);
             vb.setPrefSize(150,130);
 
-            String url = System.getProperty("user.dir")+ "\\Resources\\Courses\\"+course.getCover()+".jpg";
+            String url = Path.RESOURCE+ File.separator+"Courses"+File.separator+course.getCover()+".jpg";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(100);
@@ -96,7 +95,7 @@ public class HomeController extends Page {
             gp.setPadding(new Insets(10));
             gp.setStyle("-fx-border-color: black;");
 
-            String url = System.getProperty("user.dir")+ "\\Resources\\Trainers\\T1.png";
+            String url = Path.RESOURCE+ File.separator+"Trainers"+File.separator+"T1.png";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(90);

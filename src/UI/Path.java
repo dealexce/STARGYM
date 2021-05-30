@@ -1,5 +1,7 @@
 package UI;
 
+import java.io.File;
+
 public class Path {
 /**
  * @description: fxml path string
@@ -22,4 +24,5 @@ public static final String CREATECOURSE = "Pages/CreateCoursePage.fxml";
 public static final String TRAINERPERSONAL = "Pages/TrainerPersonalPage.fxml";
 public static final String TRAINERMYCOURSE = "Pages/TrainerMyCoursePage.fxml";
 public static final String LIVESESSION = "Pages/LiveSessionPage.fxml";
+public static String RESOURCE = System.getProperty("user.dir")+ File.separator+"Resources"+File.separator;
 }

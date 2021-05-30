@@ -120,7 +120,7 @@ public class ExerciseArrangeController extends Page {
         date = LocalDate.parse(datePicker.getValue().toString());
         this.stageManager.getDataService().traineeCreateExercise(trainer.getUserId(), date,
                 session.getSelectionModel().getSelectedIndex(),description.getText());
-        notice("Success","You like this trainer! You can see this trainer in your personal page then.", Alert.AlertType.INFORMATION);
+        notice("Success","You book a live session this trainer! You can see this session in your personal page then.", Alert.AlertType.INFORMATION);
         this.stageManager.closeStage(getLocalPath());
     }
 

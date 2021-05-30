@@ -19,6 +19,7 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -53,7 +54,7 @@ public class CoursePlayerController extends Page {
             courseTitle.setText(course.getTitle());
             trainerName.setText(course.getTrainerId());
             introduction.setText(course.getDescription());
-            String url = System.getProperty("user.dir")+ "\\Resources\\Player\\V1.gif";
+            String url = Path.RESOURCE+ File.separator+"Player"+File.separator+"V1.gif";
             Image img = new Image("file:"+url);
             playerContent.setImage(img);
         }

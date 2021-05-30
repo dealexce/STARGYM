@@ -12,11 +12,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -52,18 +51,14 @@ public class AllCoursesController extends Page {
             gp.setPrefSize(240,170);
             gp.setMinSize(240,170);
             gp.setStyle("-fx-background-color: white");
-            String url = System.getProperty("user.dir")+ "\\Resources\\Course\\"+course.getCover()+".jpg";
+            String url = Path.RESOURCE+ File.separator+"Courses"+File.separator+course.getCover()+".jpg";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(120);
             imgv.setFitWidth(240);
-            imgv.setPreserveRatio(false);
+            imgv.setPreserveRatio(true);
             imgv.setPickOnBounds(true);
-            VBox imgVB = new VBox();
-            imgVB.setMinSize(240,120);
-            imgVB.setPrefSize(240,120);
-            imgVB.getChildren().add(imgv);
-            gp.add(imgVB,0,0);
+            gp.add(imgv,0,0);
 
             VBox vb = new VBox();
             vb.setPrefSize(240,15);
@@ -88,7 +83,6 @@ public class AllCoursesController extends Page {
             gp.add(vb,0,1);
 
             coursePane.getChildren().add(gp);
-
         }
     }
 

@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.File;
+
 /**
  * @description: Controller of MemberPersonalPage
  * @author: Haopu Chen
@@ -29,9 +31,9 @@ public class LiveSessionController extends Page {
 
     @Override
     public void init() {
-        String trainerURL = System.getProperty("user.dir")+ "\\Resources\\Trainers\\T1.png";
-        String connectURL = System.getProperty("user.dir")+ "\\Resources\\Contact\\connect.gif";
-        String traineeURL = System.getProperty("user.dir")+ "\\Resources\\Trainee\\OIP.jpg";
+        String trainerURL = Path.RESOURCE+ File.separator+"Trainers"+File.separator+"T1.png";
+        String connectURL = Path.RESOURCE+ File.separator+"Contact"+File.separator+"connect.gif";
+        String traineeURL = Path.RESOURCE+ File.separator+"Trainee"+File.separator+"OIP.jpg";
         Image trainerImg = new Image("file:"+trainerURL);
         Image connectImg = new Image("file:"+connectURL);
         Image traineeImg = new Image("file:"+traineeURL);

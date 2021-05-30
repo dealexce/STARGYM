@@ -19,6 +19,7 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -84,9 +85,9 @@ public class MemberPersonalPageController extends Page {
             vb.setMinSize(150,150);
             Image img;
             if(course.getCover()==null){
-                img = new Image("file:"+System.getProperty("user.dir")+ "\\Resources\\Courses\\"+course.getCover()+".jpg");
+                img = new Image("file:"+Path.RESOURCE+ File.separator+"Courses"+File.separator+course.getCover()+".jpg");
             }else{
-                img = new Image("file:"+course.getCover());
+                img = new Image("file:"+Path.RESOURCE+ File.separator+"Courses"+File.separator+course.getCover()+".jpg");
             }
 
             ImageView imgv = new ImageView(img);
@@ -162,7 +163,7 @@ public class MemberPersonalPageController extends Page {
             gp.setPadding(new Insets(10));
             gp.setStyle("-fx-border-color: black;");
 
-            String url = System.getProperty("user.dir")+ "\\Resources\\Trainers\\T1.png";
+            String url = Path.RESOURCE+ File.separator+"Trainers"+File.separator+"T1.png";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(90);

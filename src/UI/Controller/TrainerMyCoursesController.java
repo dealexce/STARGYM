@@ -13,6 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -40,7 +41,7 @@ public class TrainerMyCoursesController extends Page {
             gp.setPrefSize(240,170);
             gp.setMinSize(240,170);
             gp.setStyle("-fx-background-color: white");
-            String url = System.getProperty("user.dir")+ "\\Resources\\Course\\"+course.getCover()+".jpg";
+            String url = Path.RESOURCE+ File.separator+"Courses"+File.separator+course.getCover()+".jpg";
             Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(120);

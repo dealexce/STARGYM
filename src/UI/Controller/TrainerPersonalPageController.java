@@ -17,6 +17,7 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -73,7 +74,7 @@ public class TrainerPersonalPageController extends Page {
             vb.setPrefSize(150,150);
             vb.setMinSize(150,150);
             Image img;
-            img = new Image("file:"+System.getProperty("user.dir")+ "\\Resources\\Courses\\"+course.getCover()+".jpg");
+            img = new Image("file:"+Path.RESOURCE+ File.separator+"Courses"+File.separator+course.getCover()+".jpg");
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(100);
             imgv.setFitWidth(150);

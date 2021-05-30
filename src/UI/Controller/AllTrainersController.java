@@ -19,6 +19,7 @@ import javafx.scene.shape.TriangleMesh;
 import javafx.scene.text.Font;
 import javafx.scene.control.*;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -55,7 +56,7 @@ public class AllTrainersController extends Page {
             bp.setPrefSize(600,100);
             bp.setMinSize(600,100);
             bp.setStyle("-fx-border-color: lightgrey; -fx-background-color: FCFCFC;");
-            String url = System.getProperty("user.dir")+ "\\Resources\\Trainers\\T1.png";
+            String url = Path.RESOURCE+ File.separator+"Trainers"+File.separator+"T1.png";
             javafx.scene.image.Image img = new Image("file:"+url);
             ImageView imgv = new ImageView(img);
             imgv.setFitHeight(80);
